@@ -9,24 +9,28 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.body}>
 
-      <Text style={styles.text}>Digital will</Text>
+      <Text style={styles.text}>Cryo</Text>
 
       <StatusBar style="auto" />
       
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={username}
-        placeholder="Username"
-        valueUsername = {onChangeText}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangePassoword}
-        value={passoword}
-        placeholder="Password"
-      />
-      
+      <View>
+        styles = {styles.view}
+
+        <TextInput
+          
+          onChangeText={onChangeText}
+          value={username}
+          placeholder="Username"
+          valueUsername = {onChangeText}
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangePassoword}
+          value={passoword}
+          placeholder="Password"
+        />
+      </View>
+
       <Button
         
         onPress={ ()=> { 
@@ -43,7 +47,7 @@ export default function HomeScreen() {
         }}
         title="Log in"
         color="black"
-        accessibilityLabel="Learn more about this purple button"
+        accessibilityLabel="Learn more about this button"
       />
     </SafeAreaView>
     
@@ -51,6 +55,13 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+
+  view:{
+    flexDirection: 'row',
+    borderBottomColor: '#24353E',
+    borderBottomWidth: 2,
+  },
+
   text: {
     fontSize: 30,
     top: -50,
