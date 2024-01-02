@@ -1,36 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground } from 'react-native';
 
 export default function HomeScreen() {
       const [username, onChangeText] = React.useState('');
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;
   return (
+    <ImageBackground source={require("./assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
     <SafeAreaView style={styles.body}>
-
-      <Text style={styles.text}>Cryo</Text>
-
-      <StatusBar style="auto" />
+      <View style = {styles.box}></View>
+        <Image
+        source={require("./assets/placeholder.png")}
+        />
+      <Text style={styles.text}>Log in</Text>
       
-      <View>
-        styles = {styles.view}
-
-        <TextInput
-          
-          onChangeText={onChangeText}
-          value={username}
-          placeholder="Username"
-          valueUsername = {onChangeText}
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangePassoword}
-          value={passoword}
-          placeholder="Password"
-        />
-      </View>
-
+      <StatusBar style='light-content' />
+      
+      
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={username}
+        placeholder="Enter email"
+        valueUsername = {onChangeText}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangePassoword}
+        value={passoword}
+        placeholder="Enter password"
+        secureTextEntry={true}
+      />
+      
       <Button
         
         onPress={ ()=> { 
@@ -47,42 +48,46 @@ export default function HomeScreen() {
         }}
         title="Log in"
         color="black"
-        accessibilityLabel="Learn more about this button"
       />
+
     </SafeAreaView>
-    
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
 
-  view:{
+  input:{
     flexDirection: 'row',
     borderBottomColor: '#24353E',
     borderBottomWidth: 2,
+    margin: 12,
+    width: 250,
+    padding: 10,
+    
+
   },
 
   text: {
     fontSize: 30,
-    top: -50,
+    color: "#FFFFFF",
   },
 
   body: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'pink', 
     flex: 1
   },
 
-  input: {
-    margin: 12,
-    borderWidth: 1,
-    width: 250,
-    padding: 10,
-  },
-
-  accout: {
-    backgroundColor: 'pink', 
+  box: {
+    width: 296,
+    height: 358,
+    backgroundColor: "#89ADB9",
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    opacity:0.42
   }
-  
+
 });
