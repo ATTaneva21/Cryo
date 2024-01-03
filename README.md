@@ -3,8 +3,17 @@
 </p>
 
 <hr>
+
 # 🏆 The Team
+
 <p><a href="https://github.com/NTIvanova21">Nadezhda Ivanova</a> - Scrum Trainer</p>
 <p><a href="https://github.com/VDChavdarova21">Valeria Chavdarova</a> - Back-end Developer</p>
 <p><a href="https://github.com/ATTaneva21">Antonia Taneva</a> - Back-end Developer</p>
 <p><a href="https://github.com/VGKupenova21 ">Victoria Kupenova</a> - Front-end Developer</p>
+
+<hr>
+
+
+# 📖About the application
+
+<p> Our team decided to make a mobile application. For this project we decided to use JavaScript and Python as programming languages. Its main goal is to make the bequest easier. More features of our app are: money transfers, adding people to your digital will, keeping track of your money balance, customer services and other.
