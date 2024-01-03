@@ -1,4 +1,6 @@
-# Cryo
+<p align = "center">
+  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/logo.svg" height="425" wight = "300" text-align="center">
+</p>
 
 <hr>
 # 🏆 The Team
