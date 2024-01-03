@@ -22,3 +22,43 @@
 ### ➤ <a href="#">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
 ### ➤ <a href="#">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
 ### ➤ <a href="#">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width="30" height="20"/>
+
+
+
+# 💻 Used Technologies
+### Used code editor & collaborative service: 
+<p align="left">
+  <p>
+    <img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1-1.svg" alt="Visual Studio 2022 logo" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg" alt="GitHub logo" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/git-bash.svg" alt="Git" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/pycharmedu-icon.svg" alt="PyCharm" width=48px>
+  </p>
+</p>
+
+### Used tools for our visual elements:
+<p align="left">
+    <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/figma_logo.svg" alt="Figma logo" width=48px/>
+</p>
+
+### Used technologies for our project development:
+<p align="left">
+    <p>
+    <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript" width=48px>
+    </p>
+</p>
+
+
+### Used tools for our documentation & presentation:
+<p align="left">
+    <p>
+    <img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width=48px>
+    </p>
+</p>
+
+<hr>
+
+## <p align="center">Made with love by Cryo❤️</p></h2>
