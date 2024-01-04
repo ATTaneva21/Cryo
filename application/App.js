@@ -1,93 +1,22 @@
 import React from 'react';
+import { NavigationContainer, NavigationAction } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground } from 'react-native';
 
-export default function HomeScreen() {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
-  return (
-    <ImageBackground source={require("./assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
-    <SafeAreaView style={styles.body}>
-      <View style = {styles.box}></View>
-        <Image
-        source={require("./assets/placeholder.png")}
-        />
-      <Text style={styles.text}>Log in</Text>
-      
-      <StatusBar style='light-content' />
-      
-      
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={username}
-        placeholder="Enter email"
-        valueUsername = {onChangeText}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangePassoword}
-        value={passoword}
-        placeholder="Enter password"
-        secureTextEntry={true}
-      />
-      
-      <Button
-        
-        onPress={ ()=> { 
-          if(username === 'user1' && passoword === 'pass1' ){
-            
-              
-            Alert.alert("Correct")
-              
-            
-          }
-          else{
-            Alert.alert("Wrong username or password")
-          }
-        }}
-        title="Log in"
-        color="black"
-      />
+import MainMenu from './screens/MainMenuScreen.js';
+import LogIn from "../application/screens/LogInScreen.js"
+import Register from '../application/screens/RegisterScreen.js';
 
-    </SafeAreaView>
-    </ImageBackground>
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false}}>
+        <Stack.Screen name='Main menu' component={MainMenu}/>
+        <Stack.Screen name="Log in" component={LogIn}/>
+        <Stack.Screen name='Register' component={Register}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-
-  input:{
-    flexDirection: 'row',
-    borderBottomColor: '#24353E',
-    borderBottomWidth: 2,
-    margin: 12,
-    width: 250,
-    padding: 10,
-    
-
-  },
-
-  text: {
-    fontSize: 30,
-    color: "#FFFFFF",
-  },
-
-  body: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
-  },
-
-  box: {
-    width: 296,
-    height: 358,
-    backgroundColor: "#89ADB9",
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    opacity:0.42
-  }
-
-});
