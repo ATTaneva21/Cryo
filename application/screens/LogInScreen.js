@@ -23,6 +23,7 @@ export default function HomeScreen({navigation}) {
         value={username}
         placeholder="Enter email"
         valueUsername = {onChangeText}
+        placeholderTextColor={"#24353E"}
       />
       <TextInput
         style={styles.input}
@@ -30,6 +31,7 @@ export default function HomeScreen({navigation}) {
         value={passoword}
         placeholder="Enter password"
         secureTextEntry={true}
+        placeholderTextColor={"#24353E"}
       />
       
       <Button

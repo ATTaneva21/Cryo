@@ -2,9 +2,12 @@ import React from 'react';
 import { StatusBar, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default function Register({navigation}) {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
+      const [firstName, onChangeFirstName] = React.useState('');
+      const [secondName, onChangeSecondName] = React.useState('');
+      const [lastName, onChangeLastName] = React.useState('');
+      const [email, onChangeEmail] = React.useState('');
+      const [egn, onChangeEgn] = React.useState('');
+      const [age, onChangeAge] = React.useState('');
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
 
@@ -16,57 +19,59 @@ export default function Register({navigation}) {
         <Text style={styles.text}>Sign up</Text>
         
         <StatusBar style='light-content' />
-        
+        <View>
         
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={username}
+          onChangeText={onChangeFirstName}
+          value={firstName}
           placeholder="Enter first name"
-          valueUsername = {onChangeText}
+          placeholderTextColor={"#24353E"}
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={username}
+          onChangeText={onChangeSecondName}
+          value={secondName}
           placeholder="Enter surname"
-          valueUsername = {onChangeText}
+          placeholderTextColor={"#24353E"}
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={username}
-          placeholder="Enter last nameh"
-          valueUsername = {onChangeText}
+          onChangeText={onChangeLastName}
+          value={lastName}
+          placeholder="Enter last name"
+          placeholderTextColor={"#24353E"}
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={username}
+          onChangeText={onChangeEmail}
+          value={email}
           placeholder="Enter email"
-          valueUsername = {onChangeText}
-        />
+          placeholderTextColor={"#24353E"}
+          require={"@"}
+        /></View>
         <View style={{flexDirection:"row"}}>
-        <TextInput
-          style={styles.inputDetail}
-          onChangeText={onChangeText}
-          value={username}
-          placeholder="Egn"
-          valueUsername = {onChangeText}
-        />
-        <TextInput
-          style={styles.inputDetail}
-          onChangeText={onChangeText}
-          value={username}
-          placeholder="Age"
-          valueUsername = {onChangeText}
-        />
+          <TextInput
+            style={styles.inputDetail}
+            onChangeText={onChangeEgn}
+            value={egn}
+            placeholder="Egn"
+            placeholderTextColor={"#24353E"}
+          />
+          <TextInput
+            style={styles.inputDetail}
+            onChangeText={onChangeAge}
+            value={age}
+            placeholder="Age"
+            placeholderTextColor={"#24353E"}
+
+          />
         </View>
         <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}  style={styles.buttons}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.buttons}>
             
             <Text style={{
               color: "white",
