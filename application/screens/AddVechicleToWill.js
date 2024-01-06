@@ -1,19 +1,19 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
-export default function SendMoney({navigation}) {
+export default function AddVechicleToWill({navigation}) {
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
-    const [iban, onChangeIBAN] = React.useState('');
-    const [card, onChangeCard] = React.useState('');
-    const [cvv, onChangeCVV] = React.useState('');
-    const [description, onChangeDescription] = React.useState('');
+    const [typeOfVechicle, onChangeTypeOfVechicle] = React.useState('');
+    const [vechicleBrand, onChangeVechicleBrand] = React.useState('');
+    const [vechicleModel, onChangeVechicleModel] = React.useState('');
+    const [vechicleColor, onChangeVechicleColor] = React.useState('');
 return (
     
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
       <View style={{flexDirection:"row"}}>
-        <Text style={styles.text}>Send money</Text>
+        <Text style={styles.text}>Add to will</Text>
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.profile}></TouchableOpacity>
       </View>
       
@@ -23,7 +23,14 @@ return (
         
         <StatusBar style='light-content' />
         <View>
-        
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeTypeOfVechicle}
+          value={typeOfVechicle}
+          placeholder="Enter the type of your vechicle"
+          placeholderTextColor={"#586571"}
+          
+        />
         <TextInput
           style={styles.input}
           onChangeText={onChangeFirstName}
@@ -49,39 +56,25 @@ return (
         />
 
         <TextInput
-          style={styles.input}
-          onChangeText={onChangeIBAN}
-          value={iban}
-          placeholder="Enter recipient’s IBAN"
-          placeholderTextColor={"#586571"}
-          
-        />
-        </View>
-        <View style={styles.card}>
+            style={styles.input}
+            onChangeText={onChangeVechicleBrand}
+            value={vechicleBrand}
+            placeholder="Enter vehicle brand"
+            placeholderTextColor={"#586571"}
+          />
           <TextInput
-            style={styles.inputCard}
-            onChangeText={onChangeCard}
-            value={iban}
-            placeholder="Enter recipient’s IBAN"
+            style={styles.input}
+            onChangeText={onChangeVechicleModel}
+            value={vechicleModel}
+            placeholder="Enter vehicle model"
             placeholderTextColor={"#586571"}
             
           />
-          <TextInput
-            style={styles.inputCVV}
-            onChangeText={onChangeCVV}
-            value={cvv}
-            placeholder="CVV"
-            placeholderTextColor={"#586571"}
-            
-          />
-        </View>
-        <View>
-        
         <TextInput
           style={styles.input}
-          onChangeText={onChangeDescription}
-          value={description}
-          placeholder="Enter description (Optional)"
+          onChangeText={onChangeVechicleColor}
+          value={vechicleColor}
+          placeholder="Enter vehicle color"
           placeholderTextColor={"#586571"}
         />
 
@@ -120,22 +113,10 @@ const styles = StyleSheet.create({
     margin: 12,
     width: 310,
     padding: 5,
+    color:'#FFFFFF'
+    
   },
-  inputCard:{
-    borderBottomColor: '#FFFFFF',
-    borderBottomWidth: 2,
-    margin: 12,
-    width: 210,
-    padding: 5,
-  },
-  inputCVV:{
-    borderBottomColor: '#FFFFFF',
-    borderBottomWidth: 2,
-    margin: 12,
-    width: 75,
-    padding: 5,
-  },
-  
+
   text: {
     fontSize: 35,
     color: "#FFFFFF",
@@ -148,16 +129,13 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
 
-  card:{
-    flexDirection:"row"
-  },
   profile:{
     width: 50,
     height: 50,
     backgroundColor:"#FFFFFF",
     borderRadius: 100,
     marginTop: 40,
-    marginLeft: 90
+    marginLeft: 123
     
   },
   button1:{
@@ -165,7 +143,7 @@ const styles = StyleSheet.create({
     height: 30,
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:130,
+    marginTop:68,
     marginLeft:250
     
   },
@@ -174,7 +152,7 @@ const styles = StyleSheet.create({
     height: 30,
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:130,
+    marginTop:68,
     marginLeft: 10
   }
 
