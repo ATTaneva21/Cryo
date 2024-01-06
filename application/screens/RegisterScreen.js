@@ -58,7 +58,7 @@ export default function Register({navigation}) {
             style={styles.inputDetail}
             onChangeText={onChangeEgn}
             value={egn}
-            placeholder="Egn"
+            placeholder="EGN"
             placeholderTextColor={"#24353E"}
           />
           <TextInput
@@ -71,7 +71,7 @@ export default function Register({navigation}) {
           />
         </View>
         <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.buttons}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.button1}>
             
             <Text style={{
               color: "white",
@@ -81,7 +81,7 @@ export default function Register({navigation}) {
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.buttons}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button2}>
 
             <Text style={{
               color: "white",
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
 
   box: {
     width: 296,
-    height: 435,
+    height: 525,
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
@@ -136,12 +136,24 @@ const styles = StyleSheet.create({
     opacity:0.42
   },
 
-  buttons:{
+  button1:{
     width: 60,
     height: 30,
     backgroundColor:"#468189",
     borderRadius: 65,
+    marginTop:5,
     marginBottom: 20,
+    marginLeft:130
+    
+  },
+  button2:{
+    width: 60,
+    height: 30,
+    backgroundColor:"#468189",
+    borderRadius: 65,
+    marginTop:5,
+    marginBottom: 20,
+    marginLeft: 20
   }
 
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
 export default function HomeScreen({navigation}) {
       const [username, onChangeText] = React.useState('');
@@ -33,29 +33,40 @@ export default function HomeScreen({navigation}) {
         secureTextEntry={true}
         placeholderTextColor={"#24353E"}
       />
-      
-      <Button
-        
-        onPress={ ()=> { 
-          if(username === 'user1' && passoword === 'pass1' ){
-            Alert.alert("jj")
-          }
-          else{
-            Alert.alert("Wrong username or password")
-          }
-        }}
-        title="Log in"
-        color="black"
-      />
-      
-      <Button
-        
-        onPress={ ()=> { navigation.navigate("Main menu");}}
-        title="Back"
-        color="black"
-      />
+    <View style={{flexDirection:"row"}}>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} style={styles.button1}>
 
+          <Text style={{
+            color: "white",
+            fontSize:16,
+            textAlign: "center"
+            }}>Back</Text>
+
+          </TouchableOpacity>
+          <TouchableOpacity  
+                onPress={ ()=> { 
+                if(username === 'user1' && passoword === 'pass1' ){
+                  navigation.navigate("Main menu") 
+                }
+                else{
+                  Alert.alert("Wrong username or password")
+                }
+              }}
+              title="Log in"
+              style={styles.button2}
+            >
+              <Text style={{
+              color: "white",
+              fontSize:16,
+              textAlign: "center"
+              }}>Next</Text>
+
+          </TouchableOpacity>
+
+          
+        </View>
     </SafeAreaView>
+    
     </ImageBackground>
   );
 }
@@ -86,13 +97,32 @@ const styles = StyleSheet.create({
 
   box: {
     width: 296,
-    height: 358,
+    height: 425,
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
     opacity:0.42
+
+  },
+  button1:{
+    width: 60,
+    height: 30,
+    backgroundColor:"#468189",
+    borderRadius: 65,
+    marginTop: 60,
+    marginLeft: 140
+
+  },
+  button2:{
+    width: 60,
+    height: 30,
+    backgroundColor:"#468189",
+    borderRadius: 65,
+    marginTop: 60,
+    marginLeft: 10
+
   }
 
 });

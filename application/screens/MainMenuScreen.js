@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 
   box: {
     width: 308,
-    height: 283,
+    height: 320,
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
   },
 
   buttons:{
-    width: 227,
-    height: 30,
+    width: 250,
+    height: 32,
     backgroundColor:"#468189",
     borderRadius: 65,
     marginBottom: 20,
