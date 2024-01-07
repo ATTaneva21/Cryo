@@ -96,7 +96,7 @@ return (
               color: "white",
               fontSize:16,
               textAlign: "center"
-              }}>Send</Text>
+              }}>Add</Text>
 
           </TouchableOpacity>
         </View>

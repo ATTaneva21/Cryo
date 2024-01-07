@@ -21,38 +21,39 @@ export default function Register({navigation}) {
         <StatusBar style='light-content' />
         <View>
         
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeFirstName}
-          value={firstName}
-          placeholder="Enter first name"
-          placeholderTextColor={"#24353E"}
-        />
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeFirstName}
+            value={firstName}
+            placeholder="Enter first name"
+            placeholderTextColor={"#24353E"}
+          />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeSecondName}
-          value={secondName}
-          placeholder="Enter surname"
-          placeholderTextColor={"#24353E"}
-        />
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeSecondName}
+            value={secondName}
+            placeholder="Enter surname"
+            placeholderTextColor={"#24353E"}
+          />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeLastName}
-          value={lastName}
-          placeholder="Enter last name"
-          placeholderTextColor={"#24353E"}
-        />
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeLastName}
+            value={lastName}
+            placeholder="Enter last name"
+            placeholderTextColor={"#24353E"}
+          />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeEmail}
-          value={email}
-          placeholder="Enter email"
-          placeholderTextColor={"#24353E"}
-          require={"@"}
-        /></View>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeEmail}
+            value={email}
+            placeholder="Enter email"
+            placeholderTextColor={"#24353E"}
+            require={"@"}
+          />
+        </View>
         <View style={{flexDirection:"row"}}>
           <TextInput
             style={styles.inputDetail}
@@ -104,6 +105,7 @@ const styles = StyleSheet.create({
     margin: 12,
     width: 250,
     padding: 5,
+    color: "#FFFFFF"
   },
   
   inputDetail:{
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     margin: 12,
     width: 58,
     padding: 5,
+    color: "#FFFFFF"
   },
 
   text: {

@@ -46,7 +46,7 @@ export default function HomeScreen({navigation}) {
           <TouchableOpacity  
                 onPress={ ()=> { 
                 if(username === 'user1' && passoword === 'pass1' ){
-                  navigation.navigate("Send money") 
+                  navigation.navigate("Add Vechicle") 
                 }
                 else{
                   Alert.alert("Wrong username or password")
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     margin: 12,
     width: 250,
     padding: 10,
-    
+    color: "#FFFFFF"
 
   },
 
