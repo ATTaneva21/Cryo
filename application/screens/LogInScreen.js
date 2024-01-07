@@ -46,7 +46,7 @@ export default function HomeScreen({navigation}) {
           <TouchableOpacity  
                 onPress={ ()=> { 
                 if(username === 'user1' && passoword === 'pass1' ){
-                  navigation.navigate("Home") 
+                  navigation.navigate("HomeScreen") 
                 }
                 else{
                   Alert.alert("Wrong username or password")
