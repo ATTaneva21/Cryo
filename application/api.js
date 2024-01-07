@@ -8,10 +8,10 @@ const port = 3000;
 const routes = require('/app.json');
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_mysql_user',
-  password: 'your_mysql_password',
-  database: 'your_database_name',
+  host: 'toni@nastop-bg.com',
+  user: 'nastnuc9_toni',
+  password: '8=-AF8;~j@Mi',
+  database: 'nastnuc9_toni',
 });
 
 db.connect((err) => {
