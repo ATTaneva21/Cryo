@@ -1,6 +1,6 @@
 <p align = "center">
-  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/dark_logo.svg#gh-dark-mode-only" height="425" wight = "300" text-align="center">
-  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/light_logo.svg#gh-light-mode-only" height="425" wight = "300" text-align="center">
+  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/dark_logo.svg#gh-light-mode-only" height="425" wight = "300" text-align="center">
+  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/light_logo.svg#gh-dark-mode-only" height="425" wight = "300" text-align="center">
 </p>
 
 <hr>
