@@ -20,9 +20,9 @@
 <p> Our team decided to make a mobile application. For this project we decided to use React Native, TypeScript, SQL and Python as programming languages. Its main goal is to make the bequest easier. More features of our app are: money transfers, adding people to your digital will, keeping track of your money balance, customer services and other.
 
 # 📄 Documentation
-### ➤ <a href="#">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
-### ➤ <a href="#">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
-### ➤ <a href="#">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width="30" height="20"/>
+### ➤ <a href="https://minedusci-my.sharepoint.com/:w:/g/personal/ni01798012_edu_mon_bg/EQEo_pt8bY5Gj4Q5NCDPuJIBeHBggdc7nL1IIL_42j-ltA?e=FfHSDt">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
+### ➤ <a href="https://minedusci-my.sharepoint.com/:p:/g/personal/ni01798012_edu_mon_bg/EaAF_854UvdNvkWB0o-0aXEBuGq4KzOCLcP73ozkRyLTLA?e=HOtmpO">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
+### ➤ <a href="https://minedusci-my.sharepoint.com/:x:/g/personal/ni01798012_edu_mon_bg/EUxfUi0A8ChAlEUOacsBDWsBGghjQ7e840ucvHobYmbRZQ?e=qVPUnY">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width="30" height="20"/>
 
 
 
