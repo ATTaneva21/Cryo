@@ -8,7 +8,9 @@ export default function HomeScreen({navigation}) {
   return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
     <View>        
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.profile}></TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+          <Image source={require('../assets/profile.png')} />
+        </TouchableOpacity>
     </View>
     <SafeAreaView style={styles.body}>
     
@@ -59,18 +61,18 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     color: "#FFFFFF",
-    marginLeft: 10
+    marginLeft: '2%'
   },
   transactionsText:{
     fontSize: 25,
     color: "#FFFFFF",
-    marginLeft: 10,
-    marginTop:70
+    marginLeft: '2%',
+    marginTop:'20%'
   },
   digitalWillText:{
     fontSize: 25,
     color: "#FFFFFF",
-    marginLeft: 10,
+    marginLeft: '2%',
     
   },
 
@@ -81,53 +83,48 @@ const styles = StyleSheet.create({
   },
 
   MoneyBox: {
-    width: 350,
-    height: 250,
+    width: '87%',
+    height: '32%',
     backgroundColor: "#080C12",
     borderRadius: 12,
     justifyContent: 'flex-start',
     alignItems: 'left',
     opacity: 0.99,
-    marginBottom: 30,
+    marginBottom: '6%',
     padding: 15
-
   },
 
   DigitalWillBox:{
-    width: 350,
-    height: 360,
+    width: '87%',
+    height: '50%',
     backgroundColor: "#080C12",
     borderRadius: 12,
     padding: 15,
-    marginBottom:50,
     justifyContent: 'flex-start',
     alignItems: 'left',
-    opacity: 0.99
-    
+    opacity: 0.99  
   },
+
   profile:{
-    width: 50,
-    height: 50,
-    backgroundColor:"#FFFFFF",
-    borderRadius: 100,
-    marginTop: 10,
-    marginLeft: 353,
-    marginBottom: -40
-    
+    width: '10%',
+    height: '10%',
+    marginTop: '2.5%',
+    marginLeft: '85%',
+    marginBottom: '-15%'
   },
+
   button1:{
-    width: 60,
-    height: 30,
-    marginTop: 50,
-    marginLeft:250
-
+    width: '21%',
+    height: '6%',
+    marginTop: '15%',
+    marginLeft: '80%'
   },
-  button2:{
-    width: 60,
-    height: 30,
-    marginTop: 280,
-    marginLeft:250
 
+  button2:{
+    width: '21%',
+    height: '6%',
+    marginTop: '87%',
+    marginLeft: '80%'
   }
 
 });

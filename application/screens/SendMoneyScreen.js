@@ -14,7 +14,12 @@ return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
       <View style={{flexDirection:"row"}}>
         <Text style={styles.text}>Send money</Text>
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.profile}></TouchableOpacity>
+               
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+          <Image source={require('../assets/profile.png')} />
+        </TouchableOpacity>
+        
+
       </View>
       
         <SafeAreaView style={styles.body}>
@@ -117,65 +122,68 @@ const styles = StyleSheet.create({
   input:{
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
-    margin: 12,
-    width: 310,
+    margin: '3%',
+    width: '78%',
     padding: 5,
+    color: "#FFFFFF"
   },
+
   inputCard:{
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
-    margin: 12,
-    width: 210,
+    margin: '3%',
+    width: '53%',
     padding: 5,
+    color: "#FFFFFF"
   },
+  
   inputCVV:{
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
-    margin: 12,
-    width: 75,
+    margin: '3%',
+    width: '19%',
     padding: 5,
+    color: "#FFFFFF"
   },
   
   text: {
     fontSize: 35,
     color: "#FFFFFF",
-    marginTop: 60,
-    marginBottom:70,
-    marginLeft: 30
+    marginTop: '15%',
+    marginBottom:'14%',
+    marginLeft: '8%'
   },
 
   body:{
-    marginLeft: 15
+    marginLeft: '3%'
   },
 
   card:{
     flexDirection:"row"
   },
   profile:{
-    width: 50,
-    height: 50,
-    backgroundColor:"#FFFFFF",
-    borderRadius: 100,
-    marginTop: 40,
-    marginLeft: 90
+    width: '10%',
+    height: '10%',
+    marginTop: '10%',
+    marginLeft: '22%'
     
   },
   button1:{
-    width: 60,
-    height: 30,
+    width: '16%',
+    height: '16%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:130,
-    marginLeft:250
+    marginTop: '40%',
+    marginLeft: '62%'
     
   },
   button2:{
-    width: 60,
-    height: 30,
+    width: '16%',
+    height: '16%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:130,
-    marginLeft: 10
+    marginTop: '40%',
+    marginLeft: '2%'
   }
 
 });

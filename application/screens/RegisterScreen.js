@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   input:{
     borderBottomColor: '#24353E',
     borderBottomWidth: 2,
-    margin: 12,
+    margin: '2.4%',
     width: 250,
     padding: 5,
     color: "#FFFFFF"
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#24353E',
     borderBottomWidth: 2,
     margin: 12,
-    width: 58,
+    width: '15%',
     padding: 5,
     color: "#FFFFFF"
   },
@@ -129,8 +129,8 @@ const styles = StyleSheet.create({
   },
 
   box: {
-    width: 296,
-    height: 525,
+    width: '74%',
+    height: '65%',
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
@@ -140,23 +140,22 @@ const styles = StyleSheet.create({
   },
 
   button1:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '55%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:5,
-    marginBottom: 20,
-    marginLeft:130
+    marginTop:'1%',
+    marginLeft: '35%'
     
   },
   button2:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '55%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:5,
-    marginBottom: 20,
-    marginLeft: 20
+    marginTop:'1%',
+    marginBottom: '4%',
+    marginLeft: '4%'
   }
 
 });

@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
   },
 
   box: {
-    width: 308,
-    height: 320,
+    width: '78%',
+    height: '45%',
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   },
 
   buttons:{
-    width: 250,
-    height: 32,
+    width: '65%',
+    height: '3.5%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginBottom: 20,
+    marginBottom: '4%',
    
   },
   boldness:{
