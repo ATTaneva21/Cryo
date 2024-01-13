@@ -1,5 +1,6 @@
 <p align = "center">
-  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/logo.svg" height="425" wight = "300" text-align="center">
+  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/dark_logo.svg#gh-dark-mode-only" height="425" wight = "300" text-align="center">
+  <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/light_logo.svg#gh-light-mode-only" height="425" wight = "300" text-align="center">
 </p>
 
 <hr>
@@ -9,14 +10,14 @@
 <p><a href="https://github.com/NTIvanova21">Nadezhda Ivanova</a> - Scrum Trainer</p>
 <p><a href="https://github.com/VDChavdarova21">Valeria Chavdarova</a> - Back-end Developer</p>
 <p><a href="https://github.com/ATTaneva21">Antonia Taneva</a> - Back-end Developer</p>
-<p><a href="https://github.com/VGKupenova21 ">Victoria Kupenova</a> - Front-end Developer</p>
+<p><a href="https://github.com/VGKupenova21 ">Victoria Kupenova</a> - Back-end Developer</p>
 
 <hr>
 
 
 # 📖About the application
 
-<p> Our team decided to make a mobile application. For this project we decided to use JavaScript and Python as programming languages. Its main goal is to make the bequest easier. More features of our app are: money transfers, adding people to your digital will, keeping track of your money balance, customer services and other.
+<p> Our team decided to make a mobile application. For this project we decided to use React Native, TypeScript, SQL and Python as programming languages. Its main goal is to make the bequest easier. More features of our app are: money transfers, adding people to your digital will, keeping track of your money balance, customer services and other.
 
 # 📄 Documentation
 ### ➤ <a href="#">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
@@ -38,14 +39,18 @@
 
 ### Used tools for our visual elements:
 <p align="left">
-    <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/figma_logo.svg" alt="Figma logo" width=48px/>
+    <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/figma_logo.svg" alt="Figma logo" width=48px/>
 </p>
+
 
 ### Used technologies for our project development:
 <p align="left">
     <p>
     <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" width=48px>
-    <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/azure-2.svg" alt="Azure" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/react-native-1.svg" alt="React Native" width=48px>
+    <img src="https://cdn.worldvectorlogo.com/logos/prisma-3.svg" alt="Prisma" width=48px>
     </p>
 </p>
 
