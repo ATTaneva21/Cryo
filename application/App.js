@@ -9,6 +9,8 @@ import Register from '../application/screens/RegisterScreen.js';
 import Home from './screens/HomeScreen.js';
 import AddVechicle from '../application/screens/AddVechicleToWill.js';
 import SendMoney from '../application/screens/SendMoneyScreen.js';
+import Profile from '../application/screens/ProfileScreen.js';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -19,6 +21,7 @@ function HomeScreen() {
         <Tab.Screen name='Home' component={Home}/>
         <Tab.Screen name='Add Vechicle' component={AddVechicle}/>
         <Tab.Screen name='Send Money' component={SendMoney}/>
+        <Tab.Screen name='Profile' component={Profile}/>
       </Tab.Navigator>
   );
 }
@@ -28,10 +31,15 @@ export default function Main(){
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false}}>
         <Stack.Screen name='Main menu' component={MainMenu}/>
+        <Stack.Screen name='Profile' component={Profile}/>
         <Stack.Screen name="Log in" component={LogIn}/>
         <Stack.Screen name='Register' component={Register}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+
+

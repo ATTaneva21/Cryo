@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
-export default function AddVechicleToWill({navigation}) {
+export default function HomeScreen({navigation}) {
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
@@ -14,8 +14,10 @@ return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
       <View style={{flexDirection:"row"}}>
         <Text style={styles.text}>Add to will</Text>
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.profile}></TouchableOpacity>
-      </View>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+            <Image source={require('../assets/profile.png')} />
+          </TouchableOpacity>
+        </View>
       
         <SafeAreaView style={styles.body}>
           
@@ -110,8 +112,8 @@ const styles = StyleSheet.create({
   input:{
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
-    margin: 12,
-    width: 310,
+    margin: '3.1%',
+    width: '80%',
     padding: 5,
     color:'#FFFFFF'
     
@@ -120,40 +122,38 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 35,
     color: "#FFFFFF",
-    marginTop: 60,
-    marginBottom:70,
-    marginLeft: 30
+    marginTop: '15%',
+    marginBottom: '18%',
+    marginLeft: '6%'
   },
 
   body:{
-    marginLeft: 15
+    marginLeft: '2.4%'
   },
 
   profile:{
-    width: 50,
-    height: 50,
-    backgroundColor:"#FFFFFF",
-    borderRadius: 100,
+    width: '10%',
+    height: '10%',
     marginTop: 40,
     marginLeft: 123
     
   },
   button1:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '30%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:68,
-    marginLeft:250
+    marginTop:'18%',
+    marginLeft:'65%'
     
   },
   button2:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '30%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:68,
-    marginLeft: 10
+    marginTop:'18%',
+    marginLeft: '2%'
   }
 
 });

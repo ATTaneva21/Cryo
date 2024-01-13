@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomColor: '#24353E',
     borderBottomWidth: 2,
-    margin: 12,
-    width: 250,
+    margin: '2.3%',
+    width: '58%',
     padding: 10,
     color: "#FFFFFF"
 
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  box: {
+   box: {
     width: 296,
     height: 425,
     backgroundColor: "#89ADB9",
@@ -106,23 +106,23 @@ const styles = StyleSheet.create({
     opacity:0.42
 
   },
+  
   button1:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '42%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: 45,
-    marginLeft: 140
-
+    marginTop: '13%',
+    marginLeft: '35%'
   },
+
   button2:{
-    width: 60,
-    height: 30,
+    width: '15%',
+    height: '42%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: 45,
-    marginLeft: 10
-
+    marginTop: '13%',
+    marginLeft: '1%'
   }
 
 });
