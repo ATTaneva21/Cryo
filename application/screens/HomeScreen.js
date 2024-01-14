@@ -7,7 +7,7 @@ export default function HomeScreen({navigation}) {
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;
   return (
-    <LinearGradient colors={["#264B6C","#22425E ","#101A1C", "#0D1B1E", "transparent"]} style={{flex:1}}>
+    <LinearGradient colors={["#264B6C","#22425E", "#0D1B1E"]} style={{flex:1}}>
     <View>        
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
