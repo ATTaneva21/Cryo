@@ -33,7 +33,7 @@ export default function HomeScreen({navigation}) {
 
                   <Text style={{
                       color: "#8CBAFF",
-                      fontSize:13,
+                      fontSize:11,
                       textAlign: "center",
                       fontWeight: "300",
                       top: 5,
