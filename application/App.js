@@ -21,7 +21,7 @@ const Tab = createBottomTabNavigator();
 
 function HomeScreen() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false}}>
+    <Tab.Navigator screenOptions={{ headerShown: false}} initialRouteName='Home'>
       <Tab.Screen name="Send Money" component={SendMoney} 
           options={{tabBarIcon: ({ color, size }) => (<Ionicons name="swap-horizontal-outline" color={color} size={size} />)}}
       />

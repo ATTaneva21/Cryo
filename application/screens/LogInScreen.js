@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({navigation}) {
       const [username, onChangeText] = React.useState('');
