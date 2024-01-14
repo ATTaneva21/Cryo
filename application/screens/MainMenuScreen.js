@@ -6,7 +6,7 @@ export default function MainMenu({navigation}) {
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;
   return (
-    <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
+    <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex: 1}}>
 
       <SafeAreaView style={styles.body}>
 

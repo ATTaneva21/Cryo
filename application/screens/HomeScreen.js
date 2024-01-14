@@ -1,12 +1,13 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({navigation}) {
       const [username, onChangeText] = React.useState('');
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;
   return (
-    <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
+    <LinearGradient colors={["#264B6C","#22425E ","#101A1C", "#0D1B1E", "transparent"]} style={{flex:1}}>
     <View>        
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
@@ -28,10 +29,6 @@ export default function HomeScreen({navigation}) {
 
             </TouchableOpacity>
         </View>
-        
-      
-      
-    
       <View style = {styles.DigitalWillBox}>
       
             
@@ -50,7 +47,7 @@ export default function HomeScreen({navigation}) {
       
     </SafeAreaView>
     
-    </ImageBackground>
+    </LinearGradient>
   );
 }
 
