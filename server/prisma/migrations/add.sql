@@ -34,6 +34,7 @@ CREATE TABLE "Transaction" (
     "cardUsed" INT NOT NULL,
     "typeOfCard" TEXT NOT NULL,
     "purchaseStatus" TEXT NOT NULL,
+    "currency" TEXT NOT NULL,
 );
 
 --CreateTable
