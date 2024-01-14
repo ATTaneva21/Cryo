@@ -15,7 +15,7 @@ export default function HomeScreen({navigation}) {
           <View style = {styles.MoneyBox}>
               <Text style={styles.text}>Current balance</Text>
 
-              <Text style={{ color:"white", fontSize: 24, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>75.03 USD</Text>
+              <Text style={{ color:"white", fontSize: 20, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>75.03 USD</Text>
 
               <Text style={styles.transactionsText}>Transactions</Text>
 
@@ -32,11 +32,13 @@ export default function HomeScreen({navigation}) {
               <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }} style={styles.button}>
 
                   <Text style={{
-                      color: "#5E69CF",
-                      fontSize:12,
+                      color: "#8CBAFF",
+                      fontSize:13,
                       textAlign: "center",
-                      fontWeight: "200",
-                      }}>See more</Text>
+                      fontWeight: "300",
+                      top: 5,
+                      padding: 0,
+                    }}>See more</Text>
 
               </TouchableOpacity>
           </View>
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: "#FFFFFF",
     marginLeft: '2%',
-    marginTop:'3%',
+    marginTop:'5%',
     fontWeight: "bold"
   },
 
@@ -83,14 +85,14 @@ const styles = StyleSheet.create({
 
   MoneyBox: {
     width: '87%',
-    height: '34%',
+    height: '35%',
     backgroundColor: "#080C12",
     borderRadius: 12,
     justifyContent: 'flex-start',
     alignItems: 'left',
     opacity: 0.99,
     marginBottom: '6%',
-    padding: 15
+    padding: 12,
   },
 
   DigitalWillBox:{
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   profile:{
-    width: '10%',
+    width: '5%',
     height: '10%',
     marginTop: '2.5%',
     marginLeft: '85%',
