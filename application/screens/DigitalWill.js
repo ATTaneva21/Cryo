@@ -17,13 +17,13 @@ export default function DigitalWill({navigation}) {
         <Text style={styles.text}>Digital will</Text>
         <View style = {styles.box}></View>
     </SafeAreaView>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button2}>
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button}>
 
             <Text style={{
               color: "white",
               fontSize:16,
               textAlign: "center"
-              }}>Send</Text>
+              }}>Add</Text>
 
     </TouchableOpacity>
     </LinearGradient>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    marginTop:100
+    marginTop:70
   },
 
   
@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
     marginBottom: '-15%'
   },
 
-  button2:{
+  button:{
     width: '17%',
     height: '4%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginBottom: '2%',
+    marginBottom: '4%',
     marginLeft: '77%'
   }
 
