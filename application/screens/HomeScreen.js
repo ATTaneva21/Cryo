@@ -45,6 +45,17 @@ export default function HomeScreen({navigation}) {
           
           <View style = {styles.DigitalWillBox}> 
               <Text style={styles.digitalWillText}>Digital Will</Text>
+              
+              <View style={{flexDirection:"column"}}>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Bank account</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Porsche</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Ferrari</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Cat</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>House 1</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>House 2</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Crypto wallet</Text>
+              </View>
+
           </View>
 
       </SafeAreaView>
@@ -119,5 +130,4 @@ const styles = StyleSheet.create({
     height: '6%',
     marginLeft: '80%'
   },
-
 });
