@@ -66,7 +66,7 @@ export default function Register({navigation}) {
             style={styles.inputDetail}
             onChangeText={onChangeAge}
             value={age}
-            placeholder="Age"
+            placeholder="Date of birth"
             placeholderTextColor={"#24353E"}
 
           />
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#24353E',
     borderBottomWidth: 2,
     margin: 12,
-    width: '15%',
+    width: '25%',
     padding: 5,
     color: "#FFFFFF"
   },
@@ -129,8 +129,8 @@ const styles = StyleSheet.create({
   },
 
   box: {
-    width: '74%',
-    height: '65%',
+    width: 320,
+    height: 525,
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
