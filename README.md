@@ -2,6 +2,11 @@
   <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/dark_logo.svg#gh-light-mode-only" height="425" wight = "300" text-align="center">
   <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/light_logo.svg#gh-dark-mode-only" height="425" wight = "300" text-align="center">
 </p>
+<div align = "center">
+   <img src = "https://img.shields.io/github/repo-size/ATTaneva21/Cryo?style=for-the-badge&color=blue">
+   <img src = "https://img.shields.io/github/directory-file-count/ATTaneva21/Cryo?style=for-the-badge&color=red">
+   <img src = "https://img.shields.io/github/issues-closed/ATTaneva21/Cryo?style=for-the-badge&color=green">
+</div>
 
 <hr>
 
