@@ -7,7 +7,7 @@ export default function HomeScreen({navigation}) {
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;
   return (
-    <LinearGradient colors={["#264B6C","#22425E", "#0D1B1E"]} style={{flex:1}}>
+    <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
     <View>        
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
@@ -33,15 +33,6 @@ export default function HomeScreen({navigation}) {
       
             
             <Text style={styles.digitalWillText}>Digital Will</Text>
-            <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} style={styles.button2}>
-
-                <Text style={{
-                    color: "white",
-                    fontSize:10,
-                    textAlign: "center"
-                    }}>See more</Text>
-
-            </TouchableOpacity>
       </View>
       
       
