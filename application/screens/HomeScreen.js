@@ -1,39 +1,51 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({navigation}) {
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
-    <View>        
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
-          <Image source={require('../assets/profile.png')} />
-        </TouchableOpacity>
-    </View>
-    <SafeAreaView style={styles.body}>
-    
-        <View style = {styles.MoneyBox}>
-            <Text style={styles.text}>Current balance</Text>
-            
-            <Text style={styles.transactionsText}>Transactions</Text>
-            <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }} style={styles.button1}>
-
-                <Text style={{
-                    color: "white",
-                    fontSize:10,
-                    textAlign: "center"
-                    }}>See more</Text>
-
-            </TouchableOpacity>
-        </View>
-      <View style = {styles.DigitalWillBox}>
-      
-            
-            <Text style={styles.digitalWillText}>Digital Will</Text>
+      <View>        
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+            <Image source={require('../assets/profile.png')} />
+          </TouchableOpacity>
       </View>
+      <SafeAreaView style={styles.body}>
       
-      
-    </SafeAreaView>
+          <View style = {styles.MoneyBox}>
+              <Text style={styles.text}>Current balance</Text>
+
+              <Text style={{ color:"white", fontSize: 24, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>75.03 USD</Text>
+
+              <Text style={styles.transactionsText}>Transactions</Text>
+
+              <View style={{flexDirection:"row"}}>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Lidl</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+              </View>
+
+              <View style={{flexDirection:"row"}}>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 5, fontWeight: "200"}}>Kaufland</Text>
+                <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
+              </View>
+
+              <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }} style={styles.button}>
+
+                  <Text style={{
+                      color: "#5E69CF",
+                      fontSize:12,
+                      textAlign: "center",
+                      fontWeight: "200",
+                      }}>See more</Text>
+
+              </TouchableOpacity>
+          </View>
+          
+          <View style = {styles.DigitalWillBox}> 
+              <Text style={styles.digitalWillText}>Digital Will</Text>
+          </View>
+
+      </SafeAreaView>
     
     </LinearGradient>
   );
@@ -41,24 +53,26 @@ export default function HomeScreen({navigation}) {
 
 const styles = StyleSheet.create({
 
-  
-
   text: {
     fontSize: 25,
     color: "#FFFFFF",
-    marginLeft: '2%'
+    marginLeft: '2%',
+    fontWeight: "bold"
   },
+
   transactionsText:{
     fontSize: 25,
     color: "#FFFFFF",
     marginLeft: '2%',
-    marginTop:'20%'
+    marginTop:'3%',
+    fontWeight: "bold"
   },
+
   digitalWillText:{
     fontSize: 25,
     color: "#FFFFFF",
     marginLeft: '2%',
-    
+    fontWeight: "bold"
   },
 
   body: {
@@ -69,7 +83,7 @@ const styles = StyleSheet.create({
 
   MoneyBox: {
     width: '87%',
-    height: '32%',
+    height: '34%',
     backgroundColor: "#080C12",
     borderRadius: 12,
     justifyContent: 'flex-start',
@@ -98,10 +112,9 @@ const styles = StyleSheet.create({
     marginBottom: '-15%'
   },
 
-  button1:{
+  button:{
     width: '21%',
     height: '6%',
-    marginTop: '15%',
     marginLeft: '80%'
   },
 
