@@ -3,9 +3,6 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({navigation}) {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
     <View>        
@@ -19,7 +16,7 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.text}>Current balance</Text>
             
             <Text style={styles.transactionsText}>Transactions</Text>
-            <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} style={styles.button1}>
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }} style={styles.button1}>
 
                 <Text style={{
                     color: "white",
@@ -107,12 +104,5 @@ const styles = StyleSheet.create({
     marginTop: '15%',
     marginLeft: '80%'
   },
-
-  button2:{
-    width: '21%',
-    height: '6%',
-    marginTop: '87%',
-    marginLeft: '80%'
-  }
 
 });

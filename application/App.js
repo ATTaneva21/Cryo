@@ -13,6 +13,7 @@ import AddVechicle from '../application/screens/AddVechicleToWill.js';
 import SendMoney from '../application/screens/SendMoneyScreen.js';
 import Profile from '../application/screens/ProfileScreen.js';
 import DigitalWill from '../application/screens/DigitalWill.js';
+import Transactions from '../application/screens/Transactions.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -45,11 +46,11 @@ export default function Main(){
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false}}>
         <Stack.Screen name='Main menu' component={MainMenu}/>
-        <Stack.Screen name='Profile' component={Profile}/>
         <Stack.Screen name="Log in" component={LogIn}/>
         <Stack.Screen name='Register' component={Register}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
-        
+        <Stack.Screen name='Profile' component={Profile}/>
+        <Stack.Screen name='Transactions' component={Transactions}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

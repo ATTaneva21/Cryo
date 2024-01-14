@@ -1,8 +1,7 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar, StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
-export default function HomeScreen({navigation}) {
+export default function LogIn({navigation}) {
       const [username, onChangeText] = React.useState('');
       const [passoword, onChangePassoword] = React.useState('');
       var valueUsername;

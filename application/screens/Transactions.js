@@ -1,11 +1,8 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function DigitalWill({navigation}) {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
+export default function Transactions({navigation}) {
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
     <View>        

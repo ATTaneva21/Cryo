@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function SendMoney({navigation}) {
     const [firstName, onChangeFirstName] = React.useState('');
@@ -11,7 +12,7 @@ export default function SendMoney({navigation}) {
     const [description, onChangeDescription] = React.useState('');
 return (
     
-    <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
+  <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
       <View style={{flexDirection:"row"}}>
         <Text style={styles.text}>Send money</Text>
                
@@ -66,7 +67,7 @@ return (
           <TextInput
             style={styles.inputCard}
             onChangeText={onChangeCard}
-            value={iban}
+            value={card}
             placeholder="Enter recipient’s IBAN"
             placeholderTextColor={"#586571"}
             
@@ -113,7 +114,7 @@ return (
           </TouchableOpacity>
         </View>
       </SafeAreaView>
-    </ImageBackground>
+    </LinearGradient>
   );
 }
 

@@ -1,10 +1,7 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, SafeAreaView, TextProps, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default function MainMenu({navigation}) {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex: 1}}>
 
