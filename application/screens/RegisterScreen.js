@@ -1,13 +1,40 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, SectionList } from 'react-native';
+import 'react-native-url-polyfill/auto';
+import { createClient } from '@supabase/supabase-js';
+
+
+const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Register({navigation}) {
-      const [firstName, onChangeFirstName] = React.useState('');
-      const [secondName, onChangeSecondName] = React.useState('');
-      const [lastName, onChangeLastName] = React.useState('');
+      const [fullName, onChangefullName] = React.useState('');
+      const [userName, onChangeUserName] = React.useState('');
+      const [password, onChangePassword] = React.useState('');
       const [email, onChangeEmail] = React.useState('');
       const [egn, onChangeEgn] = React.useState('');
       const [age, onChangeAge] = React.useState('');
+
+
+      const handleRegister = async () => {
+        try {
+          const { data, error } = await supabase
+            .from('users')
+            .insert([{ fullName: fullName, username: userName, password: password, email: email, SSN : egn, Birthday: age }]);
+    
+          if (error) {
+            console.error('Error registering user:', error.message);
+            return;
+          }
+    
+          console.log('User registered successfully:', data);
+          
+        } catch (error) {
+          console.error('Error registering user:', error.message);
+        }
+      };
+
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
 
@@ -23,25 +50,25 @@ export default function Register({navigation}) {
         
           <TextInput
             style={styles.input}
-            onChangeText={onChangeFirstName}
-            value={firstName}
-            placeholder="Enter first name"
+            onChangeText={onChangefullName}
+            value={fullName}
+            placeholder="Enter your full name"
             placeholderTextColor={"#24353E"}
           />
 
           <TextInput
             style={styles.input}
-            onChangeText={onChangeSecondName}
-            value={secondName}
-            placeholder="Enter surname"
+            onChangeText={onChangeUserName}
+            value={userName}
+            placeholder="Enter an username"
             placeholderTextColor={"#24353E"}
           />
 
           <TextInput
             style={styles.input}
-            onChangeText={onChangeLastName}
-            value={lastName}
-            placeholder="Enter last name"
+            onChangeText={onChangePassword}
+            value={password}
+            placeholder="Enter a password"
             placeholderTextColor={"#24353E"}
           />
 
@@ -82,8 +109,8 @@ export default function Register({navigation}) {
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Register2") }} style={styles.button2}>
-
+          <TouchableOpacity onPress={ ()=> { handleRegister(),navigation.navigate("Main menu") }} style={styles.button2}>
+         
             <Text style={{
               color: "white",
               fontSize:16,
