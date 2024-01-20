@@ -16,7 +16,7 @@ export default function MainMenu({navigation}) {
         
         <StatusBar style='light-content' />
 
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}  style={styles.buttons}>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Register1") }}  style={styles.buttons}>
           
           <Text style={{
             color: "white",

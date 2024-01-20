@@ -82,7 +82,7 @@ export default function Register({navigation}) {
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button2}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Register2") }} style={styles.button2}>
 
             <Text style={{
               color: "white",

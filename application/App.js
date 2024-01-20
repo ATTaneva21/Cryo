@@ -7,7 +7,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 import MainMenu from './screens/MainMenuScreen.js';
 import LogIn from "../application/screens/LogInScreen.js"
-import Register from '../application/screens/RegisterScreen.js';
+import Register1 from '../application/screens/RegisterScreen1.js';
+import Register2 from '../application/screens/RegisterScreen2.js';
 import Home from './screens/HomeScreen.js';
 import AddVechicle from '../application/screens/AddVechicleToWill.js';
 import SendMoney from '../application/screens/SendMoneyScreen.js';
@@ -47,7 +48,8 @@ export default function Main(){
       <Stack.Navigator screenOptions={{ headerShown: false}}>
         <Stack.Screen name='Main menu' component={MainMenu}/>
         <Stack.Screen name="Log in" component={LogIn}/>
-        <Stack.Screen name='Register' component={Register}/>
+        <Stack.Screen name='Register1' component={Register1}/>
+        <Stack.Screen name='Register2' component={Register2}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
         <Stack.Screen name='Profile' component={Profile}/>
         <Stack.Screen name='Transactions' component={Transactions}/>
