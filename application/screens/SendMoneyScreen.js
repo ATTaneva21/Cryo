@@ -103,7 +103,7 @@ return (
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button2}>
+          <TouchableOpacity onPress={ ()=> {  Alert.alert("You have successfully sent money"),navigation.navigate("Home")  }} style={styles.button2}>
 
             <Text style={{
               color: "white",

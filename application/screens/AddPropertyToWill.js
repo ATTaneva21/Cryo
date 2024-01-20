@@ -5,10 +5,9 @@ export default function HomeScreen({navigation}) {
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
-    const [typeOfVechicle, onChangeTypeOfVechicle] = React.useState('');
-    const [vechicleBrand, onChangeVechicleBrand] = React.useState('');
-    const [vechicleModel, onChangeVechicleModel] = React.useState('');
-    const [vechicleColor, onChangeVechicleColor] = React.useState('');
+    const [typeOfProperty, onChangeTypeOfProperty] = React.useState('');
+    const [addressOfProperty, onChangeAddressOfProperty] = React.useState('');
+
 return (
     
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
@@ -27,9 +26,9 @@ return (
         <View>
         <TextInput
           style={styles.input}
-          onChangeText={onChangeTypeOfVechicle}
-          value={typeOfVechicle}
-          placeholder="Enter the type of your vechicle"
+          onChangeText={onChangeTypeOfProperty}
+          value={typeOfProperty}
+          placeholder="Enter the type of your property"
           placeholderTextColor={"#586571"}
           
         />
@@ -59,26 +58,12 @@ return (
 
         <TextInput
             style={styles.input}
-            onChangeText={onChangeVechicleBrand}
-            value={vechicleBrand}
-            placeholder="Enter vehicle brand"
+            onChangeText={onChangeAddressOfProperty}
+            value={addressOfProperty}
+            placeholder="Enter the address of your property"
             placeholderTextColor={"#586571"}
           />
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeVechicleModel}
-            value={vechicleModel}
-            placeholder="Enter vehicle model"
-            placeholderTextColor={"#586571"}
-            
-          />
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeVechicleColor}
-          value={vechicleColor}
-          placeholder="Enter vehicle color"
-          placeholderTextColor={"#586571"}
-        />
+          
 
         </View>
         <View style={{flexDirection:"row"}}>
@@ -92,7 +77,7 @@ return (
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> { Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home") }} style={styles.button2}>
+          <TouchableOpacity onPress={ ()=> { Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home"); }} style={styles.button2}>
 
             <Text style={{
               color: "white",
@@ -101,6 +86,16 @@ return (
               }}>Add</Text>
 
           </TouchableOpacity>
+          <View style={styles.box}>
+
+            <Text style={{
+              color: "black",
+              fontSize:20,
+              textAlign: "left",
+              marginLeft: '10%'
+              }}>Google Karta</Text>
+
+        </View>
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -113,7 +108,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
     margin: '3.1%',
-    width: '80%',
+    width: '84%',
     padding: 5,
     color:'#FFFFFF'
     
@@ -123,36 +118,49 @@ const styles = StyleSheet.create({
     fontSize: 35,
     color: "#FFFFFF",
     marginTop: '15%',
-    marginBottom: '18%',
+    marginBottom: '8%',
     marginLeft: '6%'
+    
   },
 
   body:{
     marginLeft: '2.4%'
+    
   },
 
   profile:{
-    width: '10%',
-    height: '10%',
-    marginTop: 40,
-    marginLeft: 123
+    width: 50,
+    height: 50,
+    marginTop: 30,
+    marginLeft: 135
     
+    
+  },
+  box: {
+    width: '85%',
+    height: 200,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    justifyContent: 'center',
+    position: 'absolute',
+    marginTop: '12%',
+    marginLeft: '2%'
   },
   button1:{
     width: '15%',
-    height: '30%',
+    height: '8%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:'18%',
+    marginTop:'75%',
     marginLeft:'65%'
     
   },
   button2:{
     width: '15%',
-    height: '30%',
+    height: '8%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop:'18%',
+    marginTop:'75%',
     marginLeft: '2%'
   }
 

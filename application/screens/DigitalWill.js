@@ -3,9 +3,7 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacit
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function DigitalWill({navigation}) {
-      const [username, onChangeText] = React.useState('');
-      const [passoword, onChangePassoword] = React.useState('');
-      var valueUsername;
+      
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
     <View>        
@@ -17,7 +15,7 @@ export default function DigitalWill({navigation}) {
         <Text style={styles.text}>Digital will</Text>
         <View style = {styles.box}></View>
     </SafeAreaView>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.button}>
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} style={styles.button}>
 
             <Text style={{
               color: "white",

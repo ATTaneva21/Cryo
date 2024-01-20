@@ -9,14 +9,14 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function LogIn({navigation}) {
-  const [username, onChangeText] = React.useState('');
+  const [userName, onChangeText] = React.useState('');
   const [password, onChangePassword] = React.useState('');
 
   const checkCredentials = async () => {
     const { data, error } = await supabase
       .from('users')
       .select('*')
-      .eq('username', username)
+      .eq('username', userName)
       .eq('password', password);
 
     if (error) {
@@ -45,8 +45,8 @@ export default function LogIn({navigation}) {
         <TextInput
           style={styles.input}
           onChangeText={onChangeText}
-          value={username}
-          placeholder="Enter email"
+          value={userName}
+          placeholder="Enter your username"
           placeholderTextColor={"#24353E"}
         />
         <TextInput
