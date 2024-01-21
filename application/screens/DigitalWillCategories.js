@@ -35,7 +35,7 @@ export default function DigitalWill({navigation}) {
               }}>Bequeath Vechicle</Text>
 
     </TouchableOpacity>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.bankAccountBox}>
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("BequeathMoney") }} style={styles.bankAccountBox}>
 
             <Text style={{
               color: "white",

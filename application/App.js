@@ -15,6 +15,7 @@ import SendMoney from '../application/screens/SendMoneyScreen.js';
 import Profile from '../application/screens/ProfileScreen.js';
 import DigitalWill from '../application/screens/DigitalWill.js';
 import DigitalWillCategories from '../application/screens/DigitalWillCategories.js';
+import BequeathMoney from '../application/screens/BequeathMoney.js';
 import Transactions from '../application/screens/Transactions.js';
 
 
@@ -53,6 +54,7 @@ export default function Main(){
         <Stack.Screen name='Transactions' component={Transactions}/>
         <Stack.Screen name='AddVechicle' component={AddVechicle}/>
         <Stack.Screen name='AddProperty' component={AddProperty}/>
+        <Stack.Screen name='BequeathMoney' component={BequeathMoney}/>
         <Stack.Screen name='DigitalWillCategories' component={DigitalWillCategories}/>
       </Stack.Navigator>
     </NavigationContainer>
