@@ -53,9 +53,8 @@
     <p>
     <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" width=48px>
     <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" width=48px>
-    <img src="https://cdn.worldvectorlogo.com/logos/azure-2.svg" alt="Azure" width=48px>
     <img src="https://cdn.worldvectorlogo.com/logos/react-native-1.svg" alt="React Native" width=48px>
-    <img src="https://cdn.worldvectorlogo.com/logos/prisma-3.svg" alt="Prisma" width=48px>
+    <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" alt="Supabase" width=48px>
     </p>
 </p>
 
