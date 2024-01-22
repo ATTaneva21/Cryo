@@ -1,3 +1,5 @@
+# These are lists of the words that could be inputed by the user
+
 L_GREETINGS = ['hello', 'hi', 'hey', 'sup', 'heyo']
 L_GRATITUDE = ['thank', 'thanks']
 L_TRANSACTIONS = ['can', 'from', 'i', 'my', 'see', 'to', 'transactions', 'want', 'where']

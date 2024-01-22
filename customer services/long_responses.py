@@ -1,5 +1,6 @@
 import random
 
+# These are the chat bot responses
 
 R_GREETINGS = "Hello! How can I help you?"
 R_GRATITUDE = "You are welcome! If you have more questions, I am here to help."
@@ -11,7 +12,7 @@ R_BEQUEATH_SOMETHING = "\nIn order to bequeath the possesion you want you have t
 R_ADD_TO_WILL ="\nIn order to add a possesion to your digital will you have to: \n1.From the home page in the box Digital will click on the button see more. This will lead you to the list of your bequeathed goods and properties. \n2.To add something to your digital will you have to click the button Add at the bottom right corner. This will lead you to a form, which you have to fill out. \n3.When you fill it out you have to click the button Add at the bottom right corner."
 R_QUESTION = "What is your question?"
 
-
+# Returns one of these three responses when the user's input can't be understood by the chat bot
 def unknown():
     response = ["Could you please re-phrase that? ",
                 "I couldn't understand your question. Could you re-phrase it? ",
