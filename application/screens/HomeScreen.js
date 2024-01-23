@@ -21,7 +21,7 @@ export default function HomeScreen({navigation}) {
 
               <View style={{flexDirection:"row"}}>
                 <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Lidl</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "100", color: "red"}}>-5 USD</Text>
               </View>
 
               <View style={{flexDirection:"row"}}>
@@ -34,10 +34,8 @@ export default function HomeScreen({navigation}) {
                   <Text style={{
                       color: "#8CBAFF",
                       fontSize:11,
-                      textAlign: "center",
                       fontWeight: "300",
                       top: 5,
-                      padding: 0,
                     }}>See more</Text>
 
               </TouchableOpacity>
@@ -96,11 +94,8 @@ const styles = StyleSheet.create({
 
   MoneyBox: {
     width: '87%',
-    height: '35%',
     backgroundColor: "#080C12",
     borderRadius: 12,
-    justifyContent: 'flex-start',
-    alignItems: 'left',
     opacity: 0.99,
     marginBottom: '6%',
     padding: 12,
@@ -112,8 +107,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#080C12",
     borderRadius: 12,
     padding: 15,
-    justifyContent: 'flex-start',
-    alignItems: 'left',
     opacity: 0.99  
   },
 

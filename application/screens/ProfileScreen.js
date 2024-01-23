@@ -1,14 +1,14 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 
-export default function Settings({navigation}) {
+export default function Settings() {
 
   return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
 
 
         <Text style={styles.text}>Settings</Text>
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.button}>
+        <TouchableOpacity onPress={ ()=> { Alert.alert("Currently not working") }}  style={styles.button}>
 
                 <Text style={{
                 color: "#4293f5",

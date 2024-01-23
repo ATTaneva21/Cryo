@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Transactions({navigation}) {
@@ -21,12 +21,61 @@ export default function Transactions({navigation}) {
 
         <Text style={styles.transactionDate}>27 January</Text>
 
-        <View style = {styles.box}></View>
+        <View style = {styles.box}>
 
-        <Text></Text>
-        
-        
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+          </View>
 
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Kaufland</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
+          </View>
+        </View>
+        
+        <Text style={styles.transactionDate}>14 January</Text>
+
+        <View style = {styles.box}>
+
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+          </View>
+
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Kaufland</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
+          </View>
+
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Fred</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "green", marginLeft: 190}}>+17 USD</Text>
+          </View>
+
+        </View>
+
+        <Text style={styles.transactionDate}>11 January</Text>
+
+        <View style = {styles.box}>
+
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+          </View>
+          
+        </View>
+
+        <Text style={styles.transactionDate}>5 January</Text>
+
+        <View style = {styles.box}>
+
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Metro</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", textAlign: 'right'}}>Failed purchase</Text>
+          </View>
+          
+        </View>
       </SafeAreaView>
     
     </LinearGradient>
@@ -38,7 +87,8 @@ const styles = StyleSheet.create({
       fontSize: 28,
       color: "#FFFFFF",
       marginLeft: -130,
-      marginTop: -20
+      marginTop: -20,
+      fontWeight: "bold"
   },
   body: {
       alignItems: 'center',
@@ -47,13 +97,9 @@ const styles = StyleSheet.create({
 
   box: {
     width: 320,
-    height: 200,
+    padding: 20,
     backgroundColor: "#080C12",
     borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    marginTop:100
   },
 
   profile: {
@@ -70,7 +116,7 @@ const styles = StyleSheet.create({
   },
 
   transactionDate: {
-    fontSize: 26,
+    fontSize: 24,
     color: "#FFFFFF",
     marginLeft: -230,
     marginTop: 25
