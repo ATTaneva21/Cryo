@@ -12,26 +12,24 @@ export default function Transactions({navigation}) {
       </View>
 
       <SafeAreaView style={styles.body}>
-        <View style={{flexDirection: "row"}}>
-
         
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.button}>
-          <Text style={{ fontSize: 17, color: "white"}}>Back</Text>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.back}>
+          <Text>Back</Text>
         </TouchableOpacity>
 
         <Text style={styles.text}>Transactions</Text>
-        </View>
+
         <Text style={styles.transactionDate}>27 January</Text>
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
           </View>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Kaufland</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Kaufland</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
           </View>
         </View>
@@ -40,18 +38,18 @@ export default function Transactions({navigation}) {
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
           </View>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Kaufland</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Kaufland</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
           </View>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Fred</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Fred</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "green", marginLeft: 190}}>+17 USD</Text>
           </View>
 
@@ -61,8 +59,8 @@ export default function Transactions({navigation}) {
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Lidl</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
           </View>
           
@@ -72,9 +70,9 @@ export default function Transactions({navigation}) {
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Metro</Text>
-                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 120}}>Failed purchase</Text>
+          <View style={{flexDirection:"row"}}>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "200"}}>Metro</Text>
+                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", textAlign: 'right'}}>Failed purchase</Text>
           </View>
           
         </View>
@@ -88,9 +86,9 @@ const styles = StyleSheet.create({
   text: {
       fontSize: 28,
       color: "#FFFFFF",
-      fontWeight: "bold",
-      marginLeft: 15,
-      right: 10
+      marginLeft: -130,
+      marginTop: -20,
+      fontWeight: "bold"
   },
   body: {
       alignItems: 'center',
@@ -99,7 +97,7 @@ const styles = StyleSheet.create({
 
   box: {
     width: 320,
-    padding: 17,
+    padding: 20,
     backgroundColor: "#080C12",
     borderRadius: 12,
   },
@@ -112,9 +110,9 @@ const styles = StyleSheet.create({
     marginBottom: '-15%'
   },
 
-  button: {
-    marginLeft: -160,
-    top: -20
+  back: {
+    backgroundColor: "white",
+    marginLeft: -320
   },
 
   transactionDate: {
@@ -122,17 +120,6 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     marginLeft: -230,
     marginTop: 25
-  },
-
-  transaction: {
-    flexDirection:"row",
-    paddingVertical: 4,
-  },
-
-  description: {
-    color:"white",
-    fontSize: 17,
-    fontWeight: "200"
   }
 
 });
