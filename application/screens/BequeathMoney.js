@@ -2,14 +2,55 @@ import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import 'react-native-url-polyfill/auto';
+import { createClient } from '@supabase/supabase-js';
+
+
+const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 export default function SendMoney({navigation}) {
-    const [firstName, onChangeFirstName] = React.useState('');
-    const [secondName, onChangeSecondName] = React.useState('');
-    const [lastName, onChangeLastName] = React.useState('');
-    const [iban, onChangeIBAN] = React.useState('');
-    const [card, onChangeCard] = React.useState('');
-    const [cvv, onChangeCVV] = React.useState('');
-    const [description, onChangeDescription] = React.useState('');
+    const [yourFirstName, onChangeYourFirstName] = React.useState('');
+    const [yourSecondName, onChangeYourSecondName] = React.useState('');
+    const [yourLastName, onChangeYourLastName] = React.useState('');
+    const [rFirstName, onChangeRFirstName] = React.useState('');
+    const [rSecondName, onChangeRSecondName] = React.useState('');
+    const [rLastName, onChangeRLastName] = React.useState('');
+    const [yourIBAN, onChangeYourIBAN] = React.useState('');
+    const [rIBAN, onChangeRIBAN] = React.useState('');
+    const [effectiveDay, onChangeEffectiveDay] = React.useState('');
+    
+    const ClearInput = () => {
+        onChangeYourFirstName('');
+        onChangeYourSecondName('');
+        onChangeYourLastName('');
+        onChangeRFirstName('');
+        onChangeRSecondName('');
+        onChangeRLastName('');
+        onChangeYourIBAN('');
+        onChangeRIBAN('');
+        onChangeEffectiveDay('');
+      
+      
+    };
+
+    const BequeathMoney = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('bequeath_bank_account')
+          .insert([{ yourFirstName: yourFirstName, yourSecondName: yourSecondName, yourLastName: yourLastName, rFirstName: rFirstName, rSecondName : rSecondName, rLastName: rLastName,yourIBAN:yourIBAN,rIBAN:rIBAN,effectiveDay: effectiveDay  }]);
+  
+        if (error) {
+          console.error('Error:', error.message);
+          return;
+        }
+
+        
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    };
 return (
     
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
@@ -25,65 +66,84 @@ return (
       
         <SafeAreaView style={styles.body}>
           
-        
-        
-        <StatusBar style='light-content' />
         <View>
-        
         <TextInput
           style={styles.input}
-          onChangeText={onChangeFirstName}
-          value={firstName}
+          onChangeText={onChangeYourFirstName}
+          value={yourFirstName}
+          placeholder="Enter your first name"
+          placeholderTextColor={"#586571"}
+        />
+
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeYourSecondName}
+          value={yourSecondName}
+          placeholder="Enter your second name"
+          placeholderTextColor={"#586571"}
+        />
+
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeYourLastName}
+          value={yourLastName}
+          placeholder="Enter your third name"
+          placeholderTextColor={"#586571"}
+        />
+
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeRFirstName}
+          value={rFirstName}
           placeholder="Enter recipient’s first name"
           placeholderTextColor={"#586571"}
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeSecondName}
-          value={secondName}
+          onChangeText={onChangeRSecondName}
+          value={rSecondName}
           placeholder="Enter recipient’s second name"
           placeholderTextColor={"#586571"}
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeLastName}
-          value={lastName}
+          onChangeText={onChangeRLastName}
+          value={rLastName}
           placeholder="Enter recipient’s third name"
           placeholderTextColor={"#586571"}
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeYourIBAN}
+          value={yourIBAN}
+          placeholder="Enter your IBAN"
+          placeholderTextColor={"#586571"}
+          
         />
 
         <TextInput
           style={styles.input}
-          onChangeText={onChangeIBAN}
-          value={iban}
+          onChangeText={onChangeRIBAN}
+          value={rIBAN}
           placeholder="Enter recipient’s IBAN"
           placeholderTextColor={"#586571"}
           
         />
-        </View>
-        <View style={styles.card}>
-          <TextInput
-            style={styles.inputCard}
-            onChangeText={onChangeCard}
-            value={card}
-            placeholder="Enter your’s Card"
-            placeholderTextColor={"#586571"}
-            
-          />
-          <TextInput
-            style={styles.inputCVV}
-            onChangeText={onChangeCVV}
-            value={cvv}
-            placeholder="CVV"
-            placeholderTextColor={"#586571"}
-            
-          />
+        
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeEffectiveDay}
+          value={effectiveDay}
+          placeholder="Enter the effective date of your will"
+          placeholderTextColor={"#586571"}
+          
+        />
         </View>
         
         <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.button1}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
             
             <Text style={{
               color: "white",
@@ -93,7 +153,7 @@ return (
 
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={ ()=> {  Alert.alert("You have successfully sent money"),navigation.navigate("Home")  }} style={styles.button2}>
+          <TouchableOpacity onPress={ ()=> {  BequeathMoney(),Alert.alert("You have successfully bequeathed your bank account"),navigation.navigate("Home"),ClearInput()  }} style={styles.button2}>
 
             <Text style={{
               color: "white",
@@ -113,7 +173,7 @@ const styles = StyleSheet.create({
   input:{
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 2,
-    margin: '3%',
+    margin: '2%',
     width: '78%',
     padding: 5,
     color: "#FFFFFF"
@@ -138,15 +198,20 @@ const styles = StyleSheet.create({
   },
   
   text: {
-    fontSize: 20,
+    fontSize: 22,
     color: "#FFFFFF",
     marginTop: '15%',
-    marginBottom:'14%',
-    marginLeft: '8%'
+    marginBottom:'16%',
+    marginLeft: '5%'
   },
 
   body:{
-    marginLeft: '3%'
+    marginLeft: '3%',
+    height: '90%',
+    width: '100%',
+    position: 'absolute',
+    marginTop: '30%'
+
   },
 
   card:{
@@ -161,19 +226,19 @@ const styles = StyleSheet.create({
   },
   button1:{
     width: '16%',
-    height: '10%',
+    height: '50%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: '70%',
+    marginTop: '10%',
     marginLeft: '60%'
     
   },
   button2:{
     width: '16%',
-    height: '10%',
+    height: '50%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: '70%',
+    marginTop: '10%',
     marginLeft: '1%'
   }
 

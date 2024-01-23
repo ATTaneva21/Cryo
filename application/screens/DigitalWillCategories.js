@@ -45,6 +45,15 @@ export default function DigitalWill({navigation}) {
               }}>Bequeath your bank account</Text>
 
     </TouchableOpacity>
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWill") }}  style={styles.button}>
+            
+            <Text style={{
+              color: "white",
+              fontSize:16,
+              textAlign: "center"
+            }}>Back</Text>
+
+          </TouchableOpacity>
     </LinearGradient>
   );
 }
@@ -77,7 +86,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: 'center',
     position: 'absolute',
-    marginTop: '70%',
+    marginTop: '69%',
     marginLeft: '5%'
   },
   bankAccountBox:{

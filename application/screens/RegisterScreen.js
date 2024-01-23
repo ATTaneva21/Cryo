@@ -27,9 +27,7 @@ export default function Register({navigation}) {
             console.error('Error registering user:', error.message);
             return;
           }
-    
-          console.log('User registered successfully:', data);
-          
+
         } catch (error) {
           console.error('Error registering user:', error.message);
         }
