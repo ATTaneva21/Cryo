@@ -21,7 +21,7 @@ export default function HomeScreen({navigation}) {
 
               <View style={{flexDirection:"row"}}>
                 <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Lidl</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "100", color: "red"}}>-5 USD</Text>
+                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
               </View>
 
               <View style={{flexDirection:"row"}}>

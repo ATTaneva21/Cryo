@@ -14,21 +14,23 @@ export default function Transactions({navigation}) {
       <SafeAreaView style={styles.body}>
         <View style={{flexDirection: "row"}}>
 
-        
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.button}>
-          <Text style={{ fontSize: 17, color: "white"}}>Back</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.button}>
+            <Text style={{ fontSize: 17, color: "white"}}>Back</Text>
+          </TouchableOpacity>
 
-        <Text style={styles.text}>Transactions</Text>
+          <Text style={styles.text}>Transactions</Text>
+
         </View>
+        
         <Text style={styles.transactionDate}>27 January</Text>
 
         <View style = {styles.box}>
-
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
-                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
-          </View>
+          <TouchableOpacity onPress={()=> { navigation.navigate("Detailed")}}>
+            <View style={styles.transaction}>
+                    <Text style={styles.description}>Lidl</Text>
+                    <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+            </View>
+          </TouchableOpacity>
 
           <View style={styles.transaction}>
                   <Text style={styles.description}>Kaufland</Text>

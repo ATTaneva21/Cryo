@@ -17,6 +17,7 @@ import DigitalWill from '../application/screens/DigitalWill.js';
 import DigitalWillCategories from '../application/screens/DigitalWillCategories.js';
 import BequeathMoney from '../application/screens/BequeathMoney.js';
 import Transactions from '../application/screens/Transactions.js';
+import Detailed from '../application/screens/DetailedTransactions.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -45,13 +46,14 @@ function HomeScreen() {
 export default function Main(){
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false}} initialRouteName='Main Menu'>
         <Stack.Screen name='Main menu' component={MainMenu}/>
         <Stack.Screen name="Log in" component={LogIn}/>
         <Stack.Screen name='Register' component={Register}/>
         <Stack.Screen name='HomeScreen' component={HomeScreen}/>
         <Stack.Screen name='Profile' component={Profile}/>
         <Stack.Screen name='Transactions' component={Transactions}/>
+        <Stack.Screen name='Detailed' component={Detailed}/>
         <Stack.Screen name='AddVechicle' component={AddVechicle}/>
         <Stack.Screen name='AddProperty' component={AddProperty}/>
         <Stack.Screen name='BequeathMoney' component={BequeathMoney}/>
