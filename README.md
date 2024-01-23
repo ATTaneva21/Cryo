@@ -24,6 +24,37 @@
 
 <p> Our team decided to make a mobile application. For this project we decided to use React Native, TypeScript, SQL and Python as programming languages. Its main goal is to make the bequest easier. More features of our app are: money transfers, adding people to your digital will, keeping track of your money balance, customer services and other.
 
+# 📥 Installation
+<p><i>These instructions will help you copy and run our project.</i></p>
+
+## 🕹️ Compile from source
+- <p>Prerequisites</p>
+```
+Code Editor(e.g. Visual Studio Code)
+Git
+Expo Go (install it on your phone)
+```
+
+- <p>Installing<p>
+<p>1. Clone the repo</p>
+
+```
+https://github.com/ATTaneva21/Cryo.git
+```
+<p>2. Open the folder application</p>
+<p>3. Open cmd and install npm</p>
+
+```
+npm install
+```
+<p>4. In the cmd write</p>
+
+```
+npx expo start
+```
+<p>5. Scan the QR code</p>
+<p>6. Enjoy our application</p>
+
 # 📄 Documentation
 ### ➤ <a href="https://minedusci-my.sharepoint.com/:w:/g/personal/ni01798012_edu_mon_bg/EQEo_pt8bY5Gj4Q5NCDPuJIBeHBggdc7nL1IIL_42j-ltA?e=FfHSDt">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
 ### ➤ <a href="https://minedusci-my.sharepoint.com/:p:/g/personal/ni01798012_edu_mon_bg/EaAF_854UvdNvkWB0o-0aXEBuGq4KzOCLcP73ozkRyLTLA?e=HOtmpO">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
