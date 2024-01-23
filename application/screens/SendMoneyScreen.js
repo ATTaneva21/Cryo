@@ -2,6 +2,13 @@ import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import { createClient } from '@supabase/supabase-js';
+import 'react-native-url-polyfill/auto';
+
+
+const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
+const supabase = createClient(supabaseUrl, supabaseKey);
 export default function SendMoney({navigation}) {
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
@@ -9,7 +16,38 @@ export default function SendMoney({navigation}) {
     const [iban, onChangeIBAN] = React.useState('');
     const [card, onChangeCard] = React.useState('');
     const [cvv, onChangeCVV] = React.useState('');
+    const [money, onChangeMoney] = React.useState('');
     const [description, onChangeDescription] = React.useState('');
+
+    const ClearInput = () => {
+      
+      onChangeFirstName('');
+      onChangeSecondName('');
+      onChangeLastName('');
+      onChangeIBAN('');
+      onChangeCard('');
+      onChangeCVV('');
+      onChangeMoney('');
+      onChangeDescription('');
+    };
+
+    const SendMoney = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('transfer_money')
+          .insert([{ firstName: firstName, secondName: secondName, lastName: lastName, iban: iban, card : card, cvv: cvv, money: money,description: description  }]);
+  
+        if (error) {
+          console.error('Error:', error.message);
+          return;
+        }
+
+      } catch (error) {
+        console.error('Error registering user:', error.message);
+      }
+    };
+
+
 return (
     
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
@@ -68,7 +106,7 @@ return (
             style={styles.inputCard}
             onChangeText={onChangeCard}
             value={card}
-            placeholder="Enter recipient’s IBAN"
+            placeholder="Enter your card's number"
             placeholderTextColor={"#586571"}
             
           />
@@ -82,7 +120,14 @@ return (
           />
         </View>
         <View>
-        
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeMoney}
+          value={money}
+          placeholder="Enter how much money you want to send"
+          placeholderTextColor={"#586571"}
+        />
+
         <TextInput
           style={styles.input}
           onChangeText={onChangeDescription}
@@ -90,22 +135,13 @@ return (
           placeholder="Enter description (Optional)"
           placeholderTextColor={"#586571"}
         />
-
+          
         </View>
-        <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.button1}>
-            
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Back</Text>
-
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={ ()=> {  Alert.alert("You have successfully sent money"),navigation.navigate("Home")  }} style={styles.button2}>
+        <View>
+          <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }} style={styles.button}>
 
             <Text style={{
+              
               color: "white",
               fontSize:16,
               textAlign: "center"
@@ -169,22 +205,14 @@ const styles = StyleSheet.create({
     marginLeft: '22%'
     
   },
-  button1:{
+  
+  button:{
     width: '16%',
     height: '16%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: '40%',
-    marginLeft: '62%'
-    
-  },
-  button2:{
-    width: '16%',
-    height: '16%',
-    backgroundColor:"#468189",
-    borderRadius: 65,
-    marginTop: '40%',
-    marginLeft: '2%'
+    marginTop: '27%',
+    marginLeft: '75%'
   }
 
 });
