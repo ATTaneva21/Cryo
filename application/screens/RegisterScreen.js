@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, SectionList } from 'react-native';
+import { StatusBar, Alert, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, SectionList } from 'react-native';
 import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 
@@ -35,6 +35,26 @@ export default function Register({navigation}) {
         }
       };
 
+      const checkUsernameAvailability = async (userName) => {
+        const { data, error } = await supabase
+          .from('users')
+          .select('username')
+          .eq('username', userName);
+    
+        if (error) {
+          console.error('Error checking username availability:', error.message);
+          return false;
+        }
+    
+        if (data.length > 0) {
+          
+          Alert.alert('Username is already taken. Please choose another.');
+          return false;
+        }
+    
+        return true;
+      };
+
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
 
@@ -59,7 +79,7 @@ export default function Register({navigation}) {
           <TextInput
             style={styles.input}
             onChangeText={onChangeUserName}
-            value={userName}
+            value={checkUsernameAvailability(userName)}
             placeholder="Enter an username"
             placeholderTextColor={"#24353E"}
           />
@@ -69,6 +89,7 @@ export default function Register({navigation}) {
             onChangeText={onChangePassword}
             value={password}
             placeholder="Enter a password"
+            secureTextEntry={true}
             placeholderTextColor={"#24353E"}
           />
 
