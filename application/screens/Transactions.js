@@ -42,10 +42,12 @@ export default function Transactions({navigation}) {
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
-                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
-          </View>
+          <TouchableOpacity onPress={()=> { navigation.navigate("Detailed")}}>
+            <View style={styles.transaction}>
+                    <Text style={styles.description}>Lidl</Text>
+                    <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+            </View>
+          </TouchableOpacity>
 
           <View style={styles.transaction}>
                   <Text style={styles.description}>Kaufland</Text>
@@ -63,10 +65,12 @@ export default function Transactions({navigation}) {
 
         <View style = {styles.box}>
 
-          <View style={styles.transaction}>
-                  <Text style={styles.description}>Lidl</Text>
-                  <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
-          </View>
+          <TouchableOpacity onPress={()=> { navigation.navigate("Detailed")}}>
+            <View style={styles.transaction}>
+                    <Text style={styles.description}>Lidl</Text>
+                    <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
+            </View>
+          </TouchableOpacity>
           
         </View>
 
