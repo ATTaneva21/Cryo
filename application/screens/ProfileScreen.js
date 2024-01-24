@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 import { createClient } from '@supabase/supabase-js';
+import { useEffect } from 'react';
 
 //Allow access to database
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
@@ -64,7 +65,7 @@ export default function Settings() {
 
           </TouchableOpacity>
 
-          <SafeAreaView style={styles.body}>
+          <View style={styles.body}>
 
               <Image style={styles.profile}
                 source={require("../assets/profile.png")}
@@ -78,7 +79,7 @@ export default function Settings() {
                 <Text style={styles.textInfo}>SSN: {ssn}</Text>
               </View>
 
-          </SafeAreaView>
+          </View>
     </ImageBackground>
   );
 }
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
   textInfo: {
     fontSize: 20,
     color: "#FFFFFF",
-    marginLeft: -180,
+    marginLeft: -80,
     marginTop: 30
   },
 

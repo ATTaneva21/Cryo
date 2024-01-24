@@ -1,23 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+//Create function for transactions screen
 export default function Transactions({navigation}) {
 
   return (
 
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
-      <View>        
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
-            <Image source={require('../assets/profile.png')} />
-          </TouchableOpacity>
-      </View>
+      <View style={styles.body}>
 
-      <SafeAreaView style={styles.body}>
-        
+        <View>        
+            {/*Open profile on press */}
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+              <Image source={require('../assets/profile.png')} />
+            </TouchableOpacity>
+        </View>
+
         <View style={{flexDirection: "row"}}>
 
+          {/*Upon click, go back to the home screen*/}
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.button}>
             <Image source={require('../assets/back.png')}/>
           </TouchableOpacity>
@@ -25,7 +28,8 @@ export default function Transactions({navigation}) {
           <Text style={styles.text}>Transactions</Text>
 
         </View>
-        
+
+        {/*Display transactions and their values*/}
         <Text style={styles.transactionDate}>27 January</Text>
 
         <View style = {styles.box}>
@@ -88,12 +92,12 @@ export default function Transactions({navigation}) {
           </View>
           
         </View>
-      </SafeAreaView>
-    
+      </View>
     </LinearGradient>
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
   text: {
       fontSize: 28,

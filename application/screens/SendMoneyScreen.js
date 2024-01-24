@@ -56,7 +56,7 @@ export default function SendMoney({navigation}) {
 
 return (
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
-
+      <View style={styles.body}>
       <View style={{flexDirection:"row"}}>
 
         {/*Display main text on Send money screen*/}
@@ -159,6 +159,7 @@ return (
             </TouchableOpacity>
           </LinearGradient>
         </View>
+      </View>
     </LinearGradient>
   );
 }

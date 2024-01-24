@@ -5,47 +5,50 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function MainMenu({navigation}) {
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex: 1}}>
+      
+        <View style={styles.body}>
 
-         {/*Display container box*/}
-        <View style = {styles.box}></View>
-          
-        {/*Display starting screen text*/}
-        <Text style={styles.text}>Welcome to</Text>
-        <Text style={styles.boldness}>Cryo</Text>
-
-        <Image source={require("../assets/placeholder.png")} style={{marginBottom: 30, marginTop: 10}}/>
-
-        {/*Add gradient to button background*/}
-        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
-
-          {/*Upon clicking the register button, enter register screen*/}
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
+          {/*Display container box*/}
+          <View style = {styles.box}></View>
             
-            {/*Add stylization to text*/}
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Register an account</Text>
-          
-          </TouchableOpacity>
-        </LinearGradient>
+          {/*Display starting screen text*/}
+          <Text style={styles.text}>Welcome to</Text>
+          <Text style={styles.boldness}>Cryo</Text>
 
-        {/*Add gradient to button background*/}
-        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+          <Image source={require("../assets/placeholder.png")} style={{marginBottom: 30, marginTop: 10}}/>
 
-          {/*Upon clicking the login button, enter login screen*/}
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
+          {/*Add gradient to button background*/}
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+
+            {/*Upon clicking the register button, enter register screen*/}
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
+              
+              {/*Add stylization to text*/}
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Register an account</Text>
             
-            {/*Add stylization to text*/}
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-              }}>Log into an existing account</Text>
+            </TouchableOpacity>
+          </LinearGradient>
 
-          </TouchableOpacity>
-        </LinearGradient>
+          {/*Add gradient to button background*/}
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+
+            {/*Upon clicking the login button, enter login screen*/}
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
+              
+              {/*Add stylization to text*/}
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+                }}>Log into an existing account</Text>
+
+            </TouchableOpacity>
+          </LinearGradient>
+        </View>
     </ImageBackground>
   );
 }

@@ -39,67 +39,70 @@ export default function LogIn({navigation}) {
   return (
   
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
+
+      <View style={styles.body}>
       
-      {/*Display container box*/}
-        <View style = {styles.box}></View>
-        
-        <Image
-          source={require("../assets/placeholder.png")}
-        />
-
-        {/*Display login form*/}
-        <Text style={styles.text}>Log in</Text>
-      
-        <StatusBar style='light-content' />
-      
-        {/*Allow user to input information */}
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeUserName}
-          value={userName}
-          placeholder="Enter your username"
-          placeholderTextColor={"#24353E"}
-        />
-
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangePassword}
-          value={password}
-          placeholder="Enter password"
-          secureTextEntry={true}
-          placeholderTextColor={"#24353E"}
-        />
-
-        <View style={{flexDirection:"row"}}>
-
-        {/*Add gradient to button background*/}
-        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
-
-          {/*Upon entering correct login information gain access to main menu */}
-          <TouchableOpacity onPress={() => navigation.navigate("Main menu")}>
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Back</Text>
-          </TouchableOpacity>
-
-        </LinearGradient>
-        
-        {/*Add gradient to button background*/}
-        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
-
-          <TouchableOpacity onPress={checkCredentials}>
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Next</Text>
-          </TouchableOpacity>
+          {/*Display container box*/}
+          <View style = {styles.box}></View>
           
-        </LinearGradient>
+          <Image
+            source={require("../assets/placeholder.png")}
+          />
+
+          {/*Display login form*/}
+          <Text style={styles.text}>Log in</Text>
+        
+          <StatusBar style='light-content' />
+        
+          {/*Allow user to input information */}
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeUserName}
+            value={userName}
+            placeholder="Enter your username"
+            placeholderTextColor={"#24353E"}
+          />
+
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangePassword}
+            value={password}
+            placeholder="Enter password"
+            secureTextEntry={true}
+            placeholderTextColor={"#24353E"}
+          />
+
+          <View style={{flexDirection:"row"}}>
+
+          {/*Add gradient to button background*/}
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
+
+            {/*Upon entering correct login information gain access to main menu */}
+            <TouchableOpacity onPress={() => navigation.navigate("Main menu")}>
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Back</Text>
+            </TouchableOpacity>
+
+          </LinearGradient>
           
-        </View>
+          {/*Add gradient to button background*/}
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+
+            <TouchableOpacity onPress={checkCredentials}>
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Next</Text>
+            </TouchableOpacity>
+            
+          </LinearGradient>
+            
+      </View>
+      </View>
     </ImageBackground>
   );
 }

@@ -58,7 +58,7 @@ export default function Register({navigation}) {
 
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
-      
+      <View style={styles.body}>
         {/*Display container box*/}
         <View style = {styles.box}></View>
 
@@ -160,7 +160,7 @@ export default function Register({navigation}) {
           </LinearGradient>
 
         </View>
-
+      </View>
     </ImageBackground>
   );
 }
