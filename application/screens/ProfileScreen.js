@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
 
   body: {
     alignItems: 'center',
-
     flex: 1,
 
   },

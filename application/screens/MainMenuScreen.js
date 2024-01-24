@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function MainMenu({navigation}) {
   return (
@@ -12,21 +13,22 @@ export default function MainMenu({navigation}) {
         <Text style={styles.text}>Welcome to</Text>
         <Text style={styles.boldness}>Cryo</Text>
 
-        <Image source={require("../assets/placeholder.png")} style={{top: -18}}/>
+        <Image source={require("../assets/placeholder.png")} style={{marginBottom: 30, marginTop: 10}}/>
         
         <StatusBar style='light-content' />
-
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}  style={styles.buttons}>
+        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
           
           <Text style={{
             color: "white",
             fontSize:16,
             textAlign: "center"
           }}>Register an account</Text>
-
+         
         </TouchableOpacity>
-
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }} style={styles.buttons}>
+ </LinearGradient>
+ <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
 
           <Text style={{
             color: "white",
@@ -35,7 +37,7 @@ export default function MainMenu({navigation}) {
             }}>Log into an existing account</Text>
 
         </TouchableOpacity>
-
+</LinearGradient>
       </SafeAreaView>
     
     </ImageBackground>
