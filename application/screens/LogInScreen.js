@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { createClient } from '@supabase/supabase-js';
 import 'react-native-url-polyfill/auto';
 
@@ -58,24 +59,25 @@ export default function LogIn({navigation}) {
           placeholderTextColor={"#24353E"}
         />
         <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={() => navigation.navigate("Main menu")} style={styles.button1}>
+        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
+          <TouchableOpacity onPress={() => navigation.navigate("Main menu")}>
             <Text style={{
               color: "white",
               fontSize:16,
               textAlign: "center"
             }}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity  
-            onPress={checkCredentials}
-            title="Log in"
-            style={styles.button2}
-          >
+          </LinearGradient>
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+          <TouchableOpacity onPress={checkCredentials}>
             <Text style={{
               color: "white",
               fontSize:16,
               textAlign: "center"
             }}>Next</Text>
           </TouchableOpacity>
+          </LinearGradient>
+          
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: 296,
-    height: 425,
+    height: 400,
     backgroundColor: "#89ADB9",
     borderRadius: 12,
     justifyContent: 'center',
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
     height: '42%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: '13%',
+    marginTop: '10%',
     marginLeft: '35%'
   },
   button2:{
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
     height: '42%',
     backgroundColor:"#468189",
     borderRadius: 65,
-    marginTop: '13%',
+    marginTop: '10%',
     marginLeft: '1%'
   }
 });

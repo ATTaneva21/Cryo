@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { createClient } from '@supabase/supabase-js';
@@ -138,7 +138,8 @@ return (
           
         </View>
         <View>
-          <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }} style={styles.button}>
+        <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
+          <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }}>
 
             <Text style={{
               
@@ -148,6 +149,7 @@ return (
               }}>Send</Text>
 
           </TouchableOpacity>
+          </LinearGradient>
         </View>
       </SafeAreaView>
     </LinearGradient>

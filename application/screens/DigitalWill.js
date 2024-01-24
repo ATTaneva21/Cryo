@@ -15,15 +15,17 @@ export default function DigitalWill({navigation}) {
         <Text style={styles.text}>Digital will</Text>
         <View style = {styles.box}></View>
     </SafeAreaView>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} style={styles.button}>
+    <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
+      <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} >
 
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-              }}>Add</Text>
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+                }}>Add</Text>
 
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </LinearGradient>
     </LinearGradient>
   );
 }

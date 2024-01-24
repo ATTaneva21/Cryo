@@ -1,5 +1,6 @@
 import React from 'react';
-import { StatusBar, Alert, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, SectionList } from 'react-native';
+import { StatusBar, Alert, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 
@@ -118,25 +119,28 @@ export default function Register({navigation}) {
           />
         </View>
         <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }}  style={styles.button1}>
-            
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Back</Text>
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} >
+              
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Back</Text>
 
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </LinearGradient>
+          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+            <TouchableOpacity onPress={ ()=> { handleRegister(),navigation.navigate("Main menu") }}>
+          
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+                }}>Next</Text>
 
-          <TouchableOpacity onPress={ ()=> { handleRegister(),navigation.navigate("Main menu") }} style={styles.button2}>
-         
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-              }}>Next</Text>
-
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </LinearGradient>
         </View>
       </SafeAreaView>
     </ImageBackground>

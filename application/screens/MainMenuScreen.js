@@ -16,28 +16,30 @@ export default function MainMenu({navigation}) {
         <Image source={require("../assets/placeholder.png")} style={{marginBottom: 30, marginTop: 10}}/>
         
         <StatusBar style='light-content' />
+
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
+            
+            <Text style={{
+              color: "white",
+              fontSize:16,
+              textAlign: "center"
+            }}>Register an account</Text>
           
-          <Text style={{
-            color: "white",
-            fontSize:16,
-            textAlign: "center"
-          }}>Register an account</Text>
-         
-        </TouchableOpacity>
- </LinearGradient>
- <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
-        <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
+          </TouchableOpacity>
+        </LinearGradient>
 
-          <Text style={{
-            color: "white",
-            fontSize:16,
-            textAlign: "center"
-            }}>Log into an existing account</Text>
+        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
 
-        </TouchableOpacity>
-</LinearGradient>
+            <Text style={{
+              color: "white",
+              fontSize:16,
+              textAlign: "center"
+              }}>Log into an existing account</Text>
+
+          </TouchableOpacity>
+        </LinearGradient>
       </SafeAreaView>
     
     </ImageBackground>
