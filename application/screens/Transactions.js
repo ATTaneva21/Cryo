@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Transactions({navigation}) {

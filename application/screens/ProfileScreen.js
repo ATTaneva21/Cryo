@@ -1,11 +1,12 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
+import {StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 
 export default function Settings() {
 
   return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
 
+        {/*Display text on settings screen*/}
         <Text style={styles.text}>Settings</Text>
 
         <TouchableOpacity onPress={ ()=> { Alert.alert("Currently not working") }}  style={styles.button}>
@@ -14,8 +15,6 @@ export default function Settings() {
               color: "#4293f5",
               fontSize: 20,
             }}>Edit</Text>
-
-            <StatusBar style='light-content' />
 
           </TouchableOpacity>
 
@@ -39,6 +38,7 @@ export default function Settings() {
   );
 }
 
+//Add stylization to file
 const styles = StyleSheet.create({
   text: {
     fontSize: 30,

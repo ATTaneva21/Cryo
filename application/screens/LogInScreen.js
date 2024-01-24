@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { createClient } from '@supabase/supabase-js';
 import 'react-native-url-polyfill/auto';
 
-
+//Allow access to database
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -14,6 +14,7 @@ export default function LogIn({navigation}) {
   const [userName, onChangeUserName] = React.useState('');
   const [password, onChangePassword] = React.useState('');
 
+  //Fetch information from database
   const checkCredentials = async () => {
     const { data, error } = await supabase
       .from('users')
@@ -21,11 +22,13 @@ export default function LogIn({navigation}) {
       .eq('username', userName)
       .eq('password', password);
 
+    //Display possible errors
     if (error) {
       console.error(error);
       return;
     }
 
+    //Check whether username and password match
     if (data.length > 0) {
       navigation.navigate("HomeScreen");
     } else {
@@ -34,20 +37,22 @@ export default function LogIn({navigation}) {
   };
 
   return (
-
+  
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
       
-      <SafeAreaView style={styles.body}>
+      {/*Display container box*/}
         <View style = {styles.box}></View>
-
+        
         <Image
           source={require("../assets/placeholder.png")}
         />
 
+        {/*Display login form*/}
         <Text style={styles.text}>Log in</Text>
       
         <StatusBar style='light-content' />
       
+        {/*Allow user to input information */}
         <TextInput
           style={styles.input}
           onChangeText={onChangeUserName}
@@ -67,8 +72,10 @@ export default function LogIn({navigation}) {
 
         <View style={{flexDirection:"row"}}>
 
+        {/*Add gradient to button background*/}
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
 
+          {/*Upon entering correct login information gain access to main menu */}
           <TouchableOpacity onPress={() => navigation.navigate("Main menu")}>
             <Text style={{
               color: "white",
@@ -78,7 +85,8 @@ export default function LogIn({navigation}) {
           </TouchableOpacity>
 
         </LinearGradient>
-
+        
+        {/*Add gradient to button background*/}
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
 
           <TouchableOpacity onPress={checkCredentials}>
@@ -92,11 +100,11 @@ export default function LogIn({navigation}) {
         </LinearGradient>
           
         </View>
-      </SafeAreaView>
     </ImageBackground>
   );
 }
 
+//Add stylization to file
 const styles = StyleSheet.create({
   input:{
     flexDirection: 'row',

@@ -1,14 +1,15 @@
 import React from 'react';
-import { StatusBar, Alert, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity} from 'react-native';
+import { Alert, StyleSheet, Text, View, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 
-
+//Allow access to database
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+//Create function to add information to database
 export default function Register({navigation}) {
 
       const [fullName, onChangefullName] = React.useState('');
@@ -18,7 +19,7 @@ export default function Register({navigation}) {
       const [egn, onChangeEgn] = React.useState('');
       const [age, onChangeAge] = React.useState('');
 
-
+      //Check if program is able to access database
       const handleRegister = async () => {
         try {
           const { data, error } = await supabase
@@ -35,6 +36,7 @@ export default function Register({navigation}) {
         }
       };
 
+      //Verify username availability
       const checkUsernameAvailability = async (userName) => {
         const { data, error } = await supabase
           .from('users')
@@ -51,27 +53,24 @@ export default function Register({navigation}) {
           Alert.alert('Username is already taken. Please choose another.');
           return false;
         }
-    
         return true;
       };
 
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
-
-      <SafeAreaView style={styles.body}>
-
+      
+        {/*Display container box*/}
         <View style = {styles.box}></View>
 
         <Image
           source={require("../assets/placeholder.png")}
         />
 
+         {/*Display Sign up form text*/}
         <Text style={styles.text}>Sign up</Text>
-        
-        <StatusBar style='light-content' />
 
+        {/*Allow user to input information */}
         <View>
-        
           <TextInput
             style={styles.input}
             onChangeText={onChangefullName}
@@ -129,7 +128,11 @@ export default function Register({navigation}) {
         </View>
 
         <View style={{flexDirection:"row"}}>
+
+          {/*Add gradient to button background*/}
           <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
+
+            {/*Upon press return to Main menu*/}
             <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} >
               
               <Text style={{
@@ -141,7 +144,10 @@ export default function Register({navigation}) {
             </TouchableOpacity>
           </LinearGradient>
 
+          {/*Add gradient to button background*/}
           <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+
+            {/*After registering, return to Main menu*/}
             <TouchableOpacity onPress={ ()=> { handleRegister(),navigation.navigate("Main menu") }}>
           
               <Text style={{
@@ -155,11 +161,11 @@ export default function Register({navigation}) {
 
         </View>
 
-      </SafeAreaView>
     </ImageBackground>
   );
 }
 
+//Add stylization to file
 const styles = StyleSheet.create({
 
   input:{

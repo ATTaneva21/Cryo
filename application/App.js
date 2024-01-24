@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-
 import MainMenu from './screens/MainMenuScreen.js';
 import LogIn from "../application/screens/LogInScreen.js"
 import Register from '../application/screens/RegisterScreen.js';
@@ -19,11 +18,10 @@ import BequeathMoney from '../application/screens/BequeathMoney.js';
 import Transactions from '../application/screens/Transactions.js';
 import Detailed from '../application/screens/DetailedTransactions.js';
 
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
+//Create navigation bar at the bottom of the screen
 function HomeScreen() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false}} initialRouteName='Home'>
@@ -42,11 +40,11 @@ function HomeScreen() {
   );
 }
 
-
 export default function Main(){
   return (
     <NavigationContainer>
 
+      {/*Create a stack navigator*/}
       <Stack.Navigator screenOptions={{ headerShown: false}} initialRouteName='Main Menu'>
         <Stack.Screen name='Main menu' component={MainMenu}/>
         <Stack.Screen name="Log in" component={LogIn}/>

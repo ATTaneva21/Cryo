@@ -1,25 +1,27 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function MainMenu({navigation}) {
   return (
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex: 1}}>
 
-      <SafeAreaView style={styles.body}>
-
+         {/*Display container box*/}
         <View style = {styles.box}></View>
           
+        {/*Display starting screen text*/}
         <Text style={styles.text}>Welcome to</Text>
         <Text style={styles.boldness}>Cryo</Text>
 
         <Image source={require("../assets/placeholder.png")} style={{marginBottom: 30, marginTop: 10}}/>
-        
-        <StatusBar style='light-content' />
 
+        {/*Add gradient to button background*/}
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
+
+          {/*Upon clicking the register button, enter register screen*/}
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Register") }}>
             
+            {/*Add stylization to text*/}
             <Text style={{
               color: "white",
               fontSize:16,
@@ -29,9 +31,13 @@ export default function MainMenu({navigation}) {
           </TouchableOpacity>
         </LinearGradient>
 
+        {/*Add gradient to button background*/}
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.buttons}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
 
+          {/*Upon clicking the login button, enter login screen*/}
+          <TouchableOpacity onPress={ ()=> { navigation.navigate("Log in") }}>
+            
+            {/*Add stylization to text*/}
             <Text style={{
               color: "white",
               fontSize:16,
@@ -40,12 +46,11 @@ export default function MainMenu({navigation}) {
 
           </TouchableOpacity>
         </LinearGradient>
-        
-      </SafeAreaView>
     </ImageBackground>
   );
 }
 
+//Add stylization to file
 const styles = StyleSheet.create({
   text: {
     fontSize: 25,

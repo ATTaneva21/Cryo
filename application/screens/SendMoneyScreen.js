@@ -1,15 +1,16 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { createClient } from '@supabase/supabase-js';
 import 'react-native-url-polyfill/auto';
 
-
+//Allow access to database
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+//Create function for send money screen
 export default function SendMoney({navigation}) {
 
     const [firstName, onChangeFirstName] = React.useState('');
@@ -21,6 +22,7 @@ export default function SendMoney({navigation}) {
     const [money, onChangeMoney] = React.useState('');
     const [description, onChangeDescription] = React.useState('');
 
+     //Clear form inputs
     const ClearInput = () => {
       
       onChangeFirstName('');
@@ -33,6 +35,7 @@ export default function SendMoney({navigation}) {
       onChangeDescription('');
     };
 
+    //Check if information was succsessfully added to database
     const SendMoney = async () => {
       try {
         const { data, error } = await supabase
@@ -52,23 +55,23 @@ export default function SendMoney({navigation}) {
 
 
 return (
-    
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
       <View style={{flexDirection:"row"}}>
 
+        {/*Display main text on Send money screen*/}
         <Text style={styles.text}>Send money</Text>
                
+        {/*Upon click, enter profile screen*/}
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
         
       </View>
-      
-        <SafeAreaView style={styles.body}>
-        <StatusBar style='light-content' />
+
         <View>
         
+        {/*Allow user to input information */}
         <TextInput
           style={styles.input}
           onChangeText={onChangeFirstName}
@@ -141,12 +144,13 @@ return (
         </View>
 
         <View>
+          {/*Add gradient to button background*/}
           <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
 
+            {/*Get feedback and clear form*/}
             <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }}>
 
               <Text style={{
-                
                 color: "white",
                 fontSize:16,
                 textAlign: "center"
@@ -155,12 +159,11 @@ return (
             </TouchableOpacity>
           </LinearGradient>
         </View>
-
-      </SafeAreaView>
     </LinearGradient>
   );
 }
 
+//Add stylization to file
 const styles = StyleSheet.create({
 
   input:{
