@@ -1,7 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { createClient } from '@supabase/supabase-js';
 
-//Create function for add property to will screen
+const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+//Create function for adding a property to will
 export default function AddPropertyToWillScreen({navigation}) {
 
     const [firstName, onChangeFirstName] = React.useState('');
@@ -10,6 +15,33 @@ export default function AddPropertyToWillScreen({navigation}) {
     const [typeOfProperty, onChangeTypeOfProperty] = React.useState('');
     const [addressOfProperty, onChangeAddressOfProperty] = React.useState('');
 
+    //Clear form inputs
+     const ClearInput = () => {
+
+      onChangeFirstName('');
+      onChangeSecondName('');
+      onChangeLastName('');
+      onChangeLastName('');
+      onChangeTypeOfProperty('');
+      onChangeAddressOfProperty('');
+    
+    };
+
+    const BequeathProperty = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('bequeath_property')
+          .insert([{ firstName: firstName, secondName: secondName, lastName: lastName, typeOfProperty: typeOfProperty, addressOfProperty : addressOfProperty}]);
+  
+        if (error) {
+          console.error('Error:', error.message);
+          return;
+        }
+        
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    };
 return (
     
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
@@ -88,7 +120,7 @@ return (
             </TouchableOpacity>
             
             {/*Give feedback to user */}
-            <TouchableOpacity onPress={ ()=> { Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home"); }} style={styles.button2}>
+            <TouchableOpacity onPress={ ()=> { BequeathProperty(),Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home"),ClearInput(); }} style={styles.button2}>
 
               <Text style={{
                 color: "white",
