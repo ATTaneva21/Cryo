@@ -1,7 +1,53 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button, TextInput, SafeAreaView, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native';
+import { createClient } from '@supabase/supabase-js';
 
+//Allow access to database
+const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+//Create function to access information to database
 export default function Settings() {
+
+  const [name, setName] = React.useState('');
+  const [birth, setBirth] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [ssn, setSSN] = React.useState('');
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('*')
+          .limit(1)
+
+        if (error) {
+          console.error('Error fetching data from Supabase:', error.message);
+          return;
+        }
+
+        if (data && data.length > 0) {
+          const firstRow = data[0];
+          setName(firstRow.fullName);
+          setBirth(firstRow.Birthday);
+          setPassword(firstRow.password);
+          setEmail(firstRow.email);
+          setSSN(firstRow.SSN);
+        } else {
+          console.log('No data found in the specified table and columns.');
+        }
+      } catch (error) {
+        console.error('Error fetching data from Supabase:', error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
@@ -19,21 +65,20 @@ export default function Settings() {
           </TouchableOpacity>
 
           <SafeAreaView style={styles.body}>
-            <Image style={styles.profile}
-              source={require("../assets/profile.png")}
+
+              <Image style={styles.profile}
+                source={require("../assets/profile.png")}
               />
+                <Text style={styles.textName}>{name}</Text>
 
-            <Text style={styles.textName}>User's name</Text>
+              <View>
+                <Text style={styles.textInfo}>Date of Birth: {birth} </Text>
+                <Text style={styles.textInfo}>Password: {password}</Text>
+                <Text style={styles.textInfo}>Email: {email}</Text>
+                <Text style={styles.textInfo}>SSN: {ssn}</Text>
+              </View>
 
-            <View>
-                <Text style={styles.textInfo}>Resides in</Text>
-                <Text style={styles.textInfo}>DateOfBirth</Text>
-                <Text style={styles.textInfo}>Password</Text>
-                <Text style={styles.textInfo}>Email</Text>
-                <Text style={styles.textInfo}>SSN</Text>
-            </View>
-
-      </SafeAreaView>
+          </SafeAreaView>
     </ImageBackground>
   );
 }
