@@ -55,9 +55,9 @@ npx expo start
 <p>6. Enjoy our application</p>
 
 # 📄 Documentation
-### ➤ <a href="https://minedusci-my.sharepoint.com/:w:/g/personal/ni01798012_edu_mon_bg/EZF3K4QFbT9LiGf24I-LDS0BjOUWAweuaOZg3Xqtc-aVFA?e=5ZilHM">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
-### ➤ <a href="https://minedusci-my.sharepoint.com/:p:/g/personal/ni01798012_edu_mon_bg/EUoLzpUnP09MhI2T700zqWABJ0uG5-mmC6TZuLR-Z7vvDQ?e=fVchhr">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
-### ➤ <a href="https://minedusci-my.sharepoint.com/:x:/g/personal/ni01798012_edu_mon_bg/EQN8XTFbWtxPm9c7C5Vgs5MB9XluglwxDvBPqg_RH38KDg?e=fwTO3X">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width="30" height="20"/>
+### ➤ <a href="https://minedusci-my.sharepoint.com/:w:/g/personal/ni01798012_edu_mon_bg/EXZZdLHnuNlDhFdeeY3R1-gBWVTrQtpyR-8xORPUabM6Tw?e=YZIKzg">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> 
+### ➤ <a href="https://minedusci-my.sharepoint.com/:p:/g/personal/ni01798012_edu_mon_bg/ETyRa8Duh5dAj8FL9dMOIZsBq5qBIPgdOM1yA_TxmM19pw?e=Qa13eE">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/>
+### ➤ <a href="https://minedusci-my.sharepoint.com/:x:/g/personal/ni01798012_edu_mon_bg/EZHJzbNpCo5Mmg_9N_ApKPwB7BpUMGg3RHrtkZl72wpRSg?e=6xMvKa">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width="30" height="20"/>
 
 
 
