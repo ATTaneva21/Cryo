@@ -16,7 +16,7 @@ export default function DetailedTransactions({navigation}) {
       <View style={{flexDirection: "row"}}>
 
             <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }}  style={styles.button}>
-                <Text style={{ fontSize: 17, color: "white"}}>Back</Text>
+            <Image source={require('../assets/back.png')}/>
             </TouchableOpacity>
 
             <Text style={styles.text}>Transactions</Text>
@@ -62,8 +62,9 @@ const styles = StyleSheet.create({
         fontSize: 28,
         color: "#FFFFFF",
         fontWeight: "bold",
-        marginLeft: 15,
-        right: 10
+        marginLeft: 20,
+        right: 10,
+        top: 15
     },
 
     body: {
@@ -88,9 +89,9 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        marginLeft: -160,
-        top: -20
-    },
+        marginLeft: -170,
+        top: -10
+      },
 
     description: {
         color:"white",
