@@ -4,7 +4,6 @@
 </p>
 <div align = "center">
    <img src = "https://img.shields.io/github/repo-size/ATTaneva21/Cryo?style=for-the-badge&color=blue">
-   <img src = "https://img.shields.io/github/directory-file-count/ATTaneva21/Cryo?style=for-the-badge&color=red">
    <img src = "https://img.shields.io/github/issues-closed/ATTaneva21/Cryo?style=for-the-badge&color=green">
 </div>
 
@@ -83,7 +82,6 @@ npx expo start
 <p align="left">
     <p>
     <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" width=48px>
-    <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" width=48px>
     <img src="https://cdn.worldvectorlogo.com/logos/react-native-1.svg" alt="React Native" width=48px>
     <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" alt="Supabase" width=48px>
     </p>
@@ -96,6 +94,13 @@ npx expo start
     <img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width=48px>
     <img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width=48px>
     <img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Excel" width=48px>
+    </p>
+</p>
+
+### Project's logo:
+<p align="left">
+    <p>
+    <img src="https://github.com/ATTaneva21/Cryo/blob/main/documentation/images/project_logo.svg" alt="project" width=48px>
     </p>
 </p>
 
