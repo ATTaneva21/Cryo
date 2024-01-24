@@ -46,6 +46,7 @@ function HomeScreen() {
 export default function Main(){
   return (
     <NavigationContainer>
+
       <Stack.Navigator screenOptions={{ headerShown: false}} initialRouteName='Main Menu'>
         <Stack.Screen name='Main menu' component={MainMenu}/>
         <Stack.Screen name="Log in" component={LogIn}/>
@@ -60,6 +61,7 @@ export default function Main(){
         <Stack.Screen name='DigitalWill' component={DigitalWill}/>
         <Stack.Screen name='DigitalWillCategories' component={DigitalWillCategories}/>
       </Stack.Navigator>
+      
     </NavigationContainer>
   );
 }

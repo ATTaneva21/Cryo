@@ -6,36 +6,41 @@ export default function DigitalWill({navigation}) {
       
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
     <View>        
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
     </View>
+
     <SafeAreaView style={styles.body}>
         <Text style={styles.text}>Digital will</Text>
         <View style = {styles.box}></View>
     </SafeAreaView>
-    <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
-      <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} >
 
-              <Text style={{
-                color: "white",
-                fontSize:16,
-                textAlign: "center"
-                }}>Add</Text>
+      <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} >
 
-      </TouchableOpacity>
-    </LinearGradient>
+            <Text style={{
+                  color: "white",
+                  fontSize:16,
+                  textAlign: "center"
+              }}>Add</Text>
+
+        </TouchableOpacity>
+      </LinearGradient>
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
+
   text:{
       fontSize: 28,
       color: "#FFFFFF",
       marginLeft: -220
   },
+  
   body: {
       alignItems: 'center',
       flex: 1

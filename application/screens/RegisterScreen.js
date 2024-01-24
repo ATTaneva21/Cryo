@@ -10,6 +10,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Register({navigation}) {
+
       const [fullName, onChangefullName] = React.useState('');
       const [userName, onChangeUserName] = React.useState('');
       const [password, onChangePassword] = React.useState('');
@@ -58,13 +59,17 @@ export default function Register({navigation}) {
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
 
       <SafeAreaView style={styles.body}>
+
         <View style = {styles.box}></View>
-          <Image
+
+        <Image
           source={require("../assets/placeholder.png")}
-          />
+        />
+
         <Text style={styles.text}>Sign up</Text>
         
         <StatusBar style='light-content' />
+
         <View>
         
           <TextInput
@@ -100,8 +105,11 @@ export default function Register({navigation}) {
             placeholderTextColor={"#24353E"}
             require={"@"}
           />
+
         </View>
+
         <View style={{flexDirection:"row"}}>
+
           <TextInput
             style={styles.inputDetail}
             onChangeText={onChangeEgn}
@@ -109,6 +117,7 @@ export default function Register({navigation}) {
             placeholder="EGN"
             placeholderTextColor={"#24353E"}
           />
+          
           <TextInput
             style={styles.inputDetail}
             onChangeText={onChangeAge}
@@ -118,6 +127,7 @@ export default function Register({navigation}) {
 
           />
         </View>
+
         <View style={{flexDirection:"row"}}>
           <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
             <TouchableOpacity onPress={ ()=> { navigation.navigate("Main menu") }} >
@@ -130,6 +140,7 @@ export default function Register({navigation}) {
 
             </TouchableOpacity>
           </LinearGradient>
+
           <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
             <TouchableOpacity onPress={ ()=> { handleRegister(),navigation.navigate("Main menu") }}>
           
@@ -141,7 +152,9 @@ export default function Register({navigation}) {
 
             </TouchableOpacity>
           </LinearGradient>
+
         </View>
+
       </SafeAreaView>
     </ImageBackground>
   );
@@ -196,8 +209,8 @@ const styles = StyleSheet.create({
     borderRadius: 65,
     marginTop:'1%',
     marginLeft: '35%'
-    
   },
+  
   button2:{
     width: '15%',
     height: '55%',

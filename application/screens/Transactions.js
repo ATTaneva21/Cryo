@@ -3,8 +3,11 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Transactions({navigation}) {
+
   return (
+
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
       <View>        
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
             <Image source={require('../assets/profile.png')} />
@@ -12,6 +15,7 @@ export default function Transactions({navigation}) {
       </View>
 
       <SafeAreaView style={styles.body}>
+        
         <View style={{flexDirection: "row"}}>
 
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Home") }}  style={styles.button}>
@@ -71,7 +75,7 @@ export default function Transactions({navigation}) {
                     <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 210}}>-5 USD</Text>
             </View>
           </TouchableOpacity>
-          
+
         </View>
 
         <Text style={styles.transactionDate}>5 January</Text>
@@ -99,6 +103,7 @@ const styles = StyleSheet.create({
       right: 10,
       top: 15
   },
+  
   body: {
       alignItems: 'center',
       flex: 1

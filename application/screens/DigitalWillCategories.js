@@ -6,64 +6,63 @@ export default function DigitalWill({navigation}) {
     
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
     <View>        
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
     </View>
+    
     <SafeAreaView style={styles.body}>
         <Text style={styles.text}>Digital will</Text>
-        
     </SafeAreaView>
+
     <TouchableOpacity onPress={ ()=> { navigation.navigate("AddProperty") }} style={styles.propertyBox}>
-
-            <Text style={{
-              color: "white",
-              fontSize:20,
-              textAlign: "left",
-              marginLeft: '10%'
-              }}>Bequeath Property</Text>
-
+        <Text style={{
+            color: "white",
+            fontSize:20,
+            textAlign: "left",
+            marginLeft: '10%'
+        }}>Bequeath Property</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("AddVechicle") }} style={styles.vechcleBox}>
 
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("AddVechicle") }} style={styles.vechcleBox}>
             <Text style={{
               color: "white",
               fontSize:20,
               textAlign: "left",
               marginLeft: '10%'
               }}>Bequeath Vechicle</Text>
-
     </TouchableOpacity>
+    
     <TouchableOpacity onPress={ ()=> { navigation.navigate("BequeathMoney") }} style={styles.bankAccountBox}>
-
             <Text style={{
               color: "white",
               fontSize:20,
               textAlign: "left",
               marginLeft: '10%'
               }}>Bequeath your bank account</Text>
-
     </TouchableOpacity>
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWill") }}  style={styles.button}>
-            
+
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWill") }}  style={styles.button}>        
             <Text style={{
               color: "white",
               fontSize:16,
               textAlign: "center"
             }}>Back</Text>
-
           </TouchableOpacity>
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
+  
   text:{
       fontSize: 28,
       color: "#FFFFFF",
       marginLeft: -220
   },
+
   body: {
       alignItems: 'center',
       flex: 1
@@ -79,6 +78,7 @@ const styles = StyleSheet.create({
     marginTop: '40%',
     marginLeft: '5%'
   },
+
   vechcleBox:{
     width: '90%',
     height: 100,
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     marginTop: '69%',
     marginLeft: '5%'
   },
+
   bankAccountBox:{
     width: '90%',
     height: 100,
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
     marginTop: '100%',
     marginLeft: '5%'
   },
+
   profile:{
     width: '10%',
     height: '10%',

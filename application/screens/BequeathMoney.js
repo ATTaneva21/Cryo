@@ -11,6 +11,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function SendMoney({navigation}) {
+
     const [yourFirstName, onChangeYourFirstName] = React.useState('');
     const [yourSecondName, onChangeYourSecondName] = React.useState('');
     const [yourLastName, onChangeYourLastName] = React.useState('');
@@ -22,6 +23,7 @@ export default function SendMoney({navigation}) {
     const [effectiveDay, onChangeEffectiveDay] = React.useState('');
     
     const ClearInput = () => {
+      
         onChangeYourFirstName('');
         onChangeYourSecondName('');
         onChangeYourLastName('');
@@ -31,8 +33,7 @@ export default function SendMoney({navigation}) {
         onChangeYourIBAN('');
         onChangeRIBAN('');
         onChangeEffectiveDay('');
-      
-      
+        
     };
 
     const BequeathMoney = async () => {
@@ -51,22 +52,24 @@ export default function SendMoney({navigation}) {
         console.error('Error:', error.message);
       }
     };
+
 return (
     
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
       <View style={{flexDirection:"row"}}>
-        <Text style={styles.text}>Bequeath your bank account</Text>
+
+      <Text style={styles.text}>Bequeath your bank account</Text>
                
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
-        
 
       </View>
       
-        <SafeAreaView style={styles.body}>
+      <SafeAreaView style={styles.body}>
           
-        <View>
+      <View>
         <TextInput
           style={styles.input}
           onChangeText={onChangeYourFirstName}
@@ -140,16 +143,18 @@ return (
           placeholderTextColor={"#586571"}
           
         />
+
         </View>
         
         <View style={{flexDirection:"row"}}>
+
           <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
-            
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Back</Text>
+              
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Back</Text>
 
           </TouchableOpacity>
 
@@ -211,19 +216,19 @@ const styles = StyleSheet.create({
     width: '100%',
     position: 'absolute',
     marginTop: '30%'
-
   },
 
   card:{
     flexDirection:"row"
   },
+
   profile:{
     width: '10%',
     height: '10%',
     marginTop: '13%',
-    marginLeft: '3%'
-    
+    marginLeft: '3%'  
   },
+
   button1:{
     width: '16%',
     height: '50%',
@@ -231,8 +236,8 @@ const styles = StyleSheet.create({
     borderRadius: 65,
     marginTop: '10%',
     marginLeft: '60%'
-    
   },
+
   button2:{
     width: '16%',
     height: '50%',

@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
 export default function HomeScreen({navigation}) {
+
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
@@ -9,30 +10,35 @@ export default function HomeScreen({navigation}) {
     const [vechicleBrand, onChangeVechicleBrand] = React.useState('');
     const [vechicleModel, onChangeVechicleModel] = React.useState('');
     const [vechicleColor, onChangeVechicleColor] = React.useState('');
+
 return (
     
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
+
       <View style={{flexDirection:"row"}}>
+
         <Text style={styles.text}>Add to will</Text>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
-            <Image source={require('../assets/profile.png')} />
-          </TouchableOpacity>
+
+        <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+          <Image source={require('../assets/profile.png')} />
+        </TouchableOpacity>
+
         </View>
       
         <SafeAreaView style={styles.body}>
-          
-        
-        
+
         <StatusBar style='light-content' />
+
         <View>
+
         <TextInput
           style={styles.input}
           onChangeText={onChangeTypeOfVechicle}
           value={typeOfVechicle}
           placeholder="Enter the type of your vechicle"
           placeholderTextColor={"#586571"}
-          
         />
+
         <TextInput
           style={styles.input}
           onChangeText={onChangeFirstName}
@@ -64,6 +70,7 @@ return (
             placeholder="Enter vehicle brand"
             placeholderTextColor={"#586571"}
           />
+
           <TextInput
             style={styles.input}
             onChangeText={onChangeVechicleModel}
@@ -81,6 +88,7 @@ return (
         />
 
         </View>
+        
         <View style={{flexDirection:"row"}}>
           <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
             

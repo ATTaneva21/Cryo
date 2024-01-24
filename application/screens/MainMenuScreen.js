@@ -40,8 +40,8 @@ export default function MainMenu({navigation}) {
 
           </TouchableOpacity>
         </LinearGradient>
+        
       </SafeAreaView>
-    
     </ImageBackground>
   );
 }
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     marginBottom: '4%',
    
   },
+
   boldness:{
     fontSize: 25,
     color: "#FFFFFF",
     fontWeight: "bold"
   }
-
 });

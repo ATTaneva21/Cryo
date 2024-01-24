@@ -3,8 +3,10 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function DetailedTransactions({navigation}) {
+  
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
       <View>        
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
             <Image source={require('../assets/profile.png')} />
@@ -24,35 +26,28 @@ export default function DetailedTransactions({navigation}) {
         </View>
 
         <View style = {styles.box}>
-
           <View style={{flexDirection:"row"}}>
                   <Text style={styles.description}>Lidl</Text>
                   <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 210}}>-5 USD</Text>
-          </View>
+          </View>         
+        </View>
 
-          
+        <View style = {styles.box}>
+            <View style={{flexDirection:"row"}}>
+                <Text style={styles.description}>Status</Text>
+                <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 170}}>Pending</Text>
+            </View>
         </View>
 
         <View style = {styles.box}>
 
             <View style={{flexDirection:"row"}}>
-                    <Text style={styles.description}>Status</Text>
-                    <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 170}}>Pending</Text>
+                <Text style={styles.description}>Card used:</Text>
+                <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 130}}>Visa 1655</Text>
             </View>
 
         </View>
-
-        <View style = {styles.box}>
-
-            <View style={{flexDirection:"row"}}>
-                    <Text style={styles.description}>Card used:</Text>
-                    <Text style={{ color:"white", fontSize: 17, fontWeight: "100", marginLeft: 130}}>Visa 1655</Text>
-            </View>
-
-        </View>
-
       </SafeAreaView>
-    
     </LinearGradient>
   );
 }
@@ -71,6 +66,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1
     },
+    
     box: {
     top: 30,
     width: 320,

@@ -3,18 +3,22 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({navigation}) {
+
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
       <View>        
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
             <Image source={require('../assets/profile.png')} />
           </TouchableOpacity>
       </View>
+
       <SafeAreaView style={styles.body}>
       
           <View style = {styles.MoneyBox}>
+            
               <Text style={styles.text}>Current balance</Text>
-
+              
               <Text style={{ color:"white", fontSize: 20, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>75.03 USD</Text>
 
               <Text style={styles.transactionsText}>Transactions</Text>
@@ -42,6 +46,7 @@ export default function HomeScreen({navigation}) {
           </View>
           
           <View style = {styles.DigitalWillBox}> 
+
               <Text style={styles.digitalWillText}>Digital Will</Text>
               
               <View style={{flexDirection:"column"}}>
@@ -55,9 +60,7 @@ export default function HomeScreen({navigation}) {
               </View>
 
           </View>
-
       </SafeAreaView>
-    
     </LinearGradient>
   );
 }

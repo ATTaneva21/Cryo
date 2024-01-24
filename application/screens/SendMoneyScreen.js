@@ -9,7 +9,9 @@ import 'react-native-url-polyfill/auto';
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
 const supabase = createClient(supabaseUrl, supabaseKey);
+
 export default function SendMoney({navigation}) {
+
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
@@ -45,26 +47,25 @@ export default function SendMoney({navigation}) {
       } catch (error) {
         console.error('Error registering user:', error.message);
       }
+
     };
 
 
 return (
     
   <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
+
       <View style={{flexDirection:"row"}}>
+
         <Text style={styles.text}>Send money</Text>
                
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
         
-
       </View>
       
         <SafeAreaView style={styles.body}>
-          
-        
-        
         <StatusBar style='light-content' />
         <View>
         
@@ -101,6 +102,7 @@ return (
           
         />
         </View>
+        
         <View style={styles.card}>
           <TextInput
             style={styles.inputCard}
@@ -119,38 +121,41 @@ return (
             
           />
         </View>
+        
         <View>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeMoney}
-          value={money}
-          placeholder="Enter how much money you want to send"
-          placeholderTextColor={"#586571"}
-        />
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeMoney}
+            value={money}
+            placeholder="Enter how much money you want to send"
+            placeholderTextColor={"#586571"}
+          />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeDescription}
-          value={description}
-          placeholder="Enter description (Optional)"
-          placeholderTextColor={"#586571"}
-        />
-          
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeDescription}
+            value={description}
+            placeholder="Enter description (Optional)"
+            placeholderTextColor={"#586571"}
+          />
         </View>
+
         <View>
-        <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
-          <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }}>
+          <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
 
-            <Text style={{
-              
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-              }}>Send</Text>
+            <TouchableOpacity onPress={ ()=> {  SendMoney(),Alert.alert("You have successfully sent money"),navigation.navigate("Home"),ClearInput()  }}>
 
-          </TouchableOpacity>
+              <Text style={{
+                
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+                }}>Send</Text>
+
+            </TouchableOpacity>
           </LinearGradient>
         </View>
+
       </SafeAreaView>
     </LinearGradient>
   );
@@ -200,6 +205,7 @@ const styles = StyleSheet.create({
   card:{
     flexDirection:"row"
   },
+  
   profile:{
     width: '10%',
     height: '10%',

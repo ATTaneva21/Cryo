@@ -10,6 +10,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function LogIn({navigation}) {
+
   const [userName, onChangeUserName] = React.useState('');
   const [password, onChangePassword] = React.useState('');
 
@@ -33,12 +34,16 @@ export default function LogIn({navigation}) {
   };
 
   return (
+
     <ImageBackground source={require("../assets/loginBackground.png")} resizeMode="cover" style={{flex:1}}>
+      
       <SafeAreaView style={styles.body}>
         <View style = {styles.box}></View>
+
         <Image
           source={require("../assets/placeholder.png")}
         />
+
         <Text style={styles.text}>Log in</Text>
       
         <StatusBar style='light-content' />
@@ -50,6 +55,7 @@ export default function LogIn({navigation}) {
           placeholder="Enter your username"
           placeholderTextColor={"#24353E"}
         />
+
         <TextInput
           style={styles.input}
           onChangeText={onChangePassword}
@@ -58,8 +64,11 @@ export default function LogIn({navigation}) {
           secureTextEntry={true}
           placeholderTextColor={"#24353E"}
         />
+
         <View style={{flexDirection:"row"}}>
+
         <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button1}>
+
           <TouchableOpacity onPress={() => navigation.navigate("Main menu")}>
             <Text style={{
               color: "white",
@@ -67,8 +76,11 @@ export default function LogIn({navigation}) {
               textAlign: "center"
             }}>Back</Text>
           </TouchableOpacity>
-          </LinearGradient>
-          <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+
+        </LinearGradient>
+
+        <LinearGradient colors={["#468189", "#77ACA2"]} style={styles.button2}>
+
           <TouchableOpacity onPress={checkCredentials}>
             <Text style={{
               color: "white",
@@ -76,7 +88,8 @@ export default function LogIn({navigation}) {
               textAlign: "center"
             }}>Next</Text>
           </TouchableOpacity>
-          </LinearGradient>
+          
+        </LinearGradient>
           
         </View>
       </SafeAreaView>
@@ -94,15 +107,18 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "#FFFFFF"
   },
+  
   text: {
     fontSize: 30,
     color: "#FFFFFF",
   },
+
   body: {
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1
   },
+
   box: {
     width: 296,
     height: 400,
@@ -113,6 +129,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     opacity:0.42
   },
+
   button1:{
     width: '15%',
     height: '42%',
@@ -121,6 +138,7 @@ const styles = StyleSheet.create({
     marginTop: '10%',
     marginLeft: '35%'
   },
+
   button2:{
     width: '15%',
     height: '42%',
