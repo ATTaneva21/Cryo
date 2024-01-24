@@ -1,8 +1,9 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image, ImageBackground,TouchableOpacity } from 'react-native';
 
-export default function HomeScreen({navigation}) {
-  
+//Create function for add property to will screen
+export default function AddPropertyToWillScreen({navigation}) {
+
     const [firstName, onChangeFirstName] = React.useState('');
     const [secondName, onChangeSecondName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
@@ -14,99 +15,96 @@ return (
     <ImageBackground source={require("../assets/mainBackground.png")} resizeMode="cover" style={{flex:1}}>
 
       <View style={{flexDirection:"row"}}>
+
         <Text style={styles.text}>Add to will</Text>
-        
+
+          {/*Open profile on press */}
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
+
             <Image source={require('../assets/profile.png')} />
+
           </TouchableOpacity>
 
         </View>
       
         <SafeAreaView style={styles.body}>
+          <View>
 
-        <StatusBar style='light-content' />
-        <View>
+            {/*Allow user to input information into database */}
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeTypeOfProperty}
+              value={typeOfProperty}
+              placeholder="Enter the type of your property"
+              placeholderTextColor={"#586571"}
+              
+            />
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeFirstName}
+              value={firstName}
+              placeholder="Enter recipient’s first name"
+              placeholderTextColor={"#586571"}
+            />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeTypeOfProperty}
-          value={typeOfProperty}
-          placeholder="Enter the type of your property"
-          placeholderTextColor={"#586571"}
-        />
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeSecondName}
+              value={secondName}
+              placeholder="Enter recipient’s second name"
+              placeholderTextColor={"#586571"}
+            />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeFirstName}
-          value={firstName}
-          placeholder="Enter recipient’s first name"
-          placeholderTextColor={"#586571"}
-        />
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeLastName}
+              value={lastName}
+              placeholder="Enter recipient’s third name"
+              placeholderTextColor={"#586571"}
+            />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeSecondName}
-          value={secondName}
-          placeholder="Enter recipient’s second name"
-          placeholderTextColor={"#586571"}
-        />
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeAddressOfProperty}
+                value={addressOfProperty}
+                placeholder="Enter the address of your property"
+                placeholderTextColor={"#586571"}
+            />
+      
+          </View>
 
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeLastName}
-          value={lastName}
-          placeholder="Enter recipient’s third name"
-          placeholderTextColor={"#586571"}
-        />
+          <View style={{flexDirection:"row"}}>
 
-        <TextInput
-            style={styles.input}
-            onChangeText={onChangeAddressOfProperty}
-            value={addressOfProperty}
-            placeholder="Enter the address of your property"
-            placeholderTextColor={"#586571"}
-          />
-          
+            {/*Return to categories menu */}
+            <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
+              
+              {/*Add stylization to text */}
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+              }}>Back</Text>
 
-        </View>
-
-        <View style={{flexDirection:"row"}}>
-          <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
+            </TouchableOpacity>
             
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-            }}>Back</Text>
+            {/*Give feedback to user */}
+            <TouchableOpacity onPress={ ()=> { Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home"); }} style={styles.button2}>
 
-          </TouchableOpacity>
+              <Text style={{
+                color: "white",
+                fontSize:16,
+                textAlign: "center"
+                }}>Add</Text>
 
-          <TouchableOpacity onPress={ ()=> { Alert.alert("You successfully added item to your digital will"),navigation.navigate("Home"); }} style={styles.button2}>
+            </TouchableOpacity>
 
-            <Text style={{
-              color: "white",
-              fontSize:16,
-              textAlign: "center"
-              }}>Add</Text>
-
-          </TouchableOpacity>
-          
-          <View style={styles.box}>
-
-            <Text style={{
-              color: "black",
-              fontSize:20,
-              textAlign: "left",
-              marginLeft: '10%'
-              }}>Google Karta</Text>
-
-        </View>
-        </View>
+          </View>
       </SafeAreaView>
     </ImageBackground>
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
 
   input:{
@@ -141,6 +139,7 @@ const styles = StyleSheet.create({
     
     
   },
+
   box: {
     width: '85%',
     height: 200,
@@ -151,6 +150,7 @@ const styles = StyleSheet.create({
     marginTop: '12%',
     marginLeft: '2%'
   },
+
   button1:{
     width: '15%',
     height: '8%',
@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
     marginLeft:'65%'
     
   },
+
   button2:{
     width: '15%',
     height: '8%',

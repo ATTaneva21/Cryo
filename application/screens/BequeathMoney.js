@@ -1,16 +1,17 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView, TextProps, Image, ImageBackground,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Alert, TextInput, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 
-
+//Allow access to database
 const supabaseUrl = "https://lfuhwchxwksgmhwbbhap.supabase.co";
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmdWh3Y2h4d2tzZ21od2JiaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NTUxNjEsImV4cCI6MjAyMTMzMTE2MX0.hGBH4G60yeqRhf8CENjA4Oead2UPD9jTEUiCTk0eKPA';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default function SendMoney({navigation}) {
+//Create function for bequeath money screen
+export default function BequeathMoney({navigation}) {
 
     const [yourFirstName, onChangeYourFirstName] = React.useState('');
     const [yourSecondName, onChangeYourSecondName] = React.useState('');
@@ -22,6 +23,7 @@ export default function SendMoney({navigation}) {
     const [rIBAN, onChangeRIBAN] = React.useState('');
     const [effectiveDay, onChangeEffectiveDay] = React.useState('');
     
+    //Clear form inputs
     const ClearInput = () => {
       
         onChangeYourFirstName('');
@@ -36,6 +38,7 @@ export default function SendMoney({navigation}) {
         
     };
 
+    //Check if information was succsessfully added to database
     const BequeathMoney = async () => {
       try {
         const { data, error } = await supabase
@@ -47,7 +50,6 @@ export default function SendMoney({navigation}) {
           return;
         }
 
-        
       } catch (error) {
         console.error('Error:', error.message);
       }
@@ -61,6 +63,7 @@ return (
 
       <Text style={styles.text}>Bequeath your bank account</Text>
                
+        {/*Open profile on press */}      
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
@@ -70,6 +73,8 @@ return (
       <SafeAreaView style={styles.body}>
           
       <View>
+
+        {/*Allow user to input information into database */}
         <TextInput
           style={styles.input}
           onChangeText={onChangeYourFirstName}
@@ -147,9 +152,11 @@ return (
         </View>
         
         <View style={{flexDirection:"row"}}>
-
+          
+          {/*Return to categories menu */}
           <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }}  style={styles.button1}>
-              
+
+              {/*Add stylization to text */}
               <Text style={{
                 color: "white",
                 fontSize:16,
@@ -158,6 +165,7 @@ return (
 
           </TouchableOpacity>
 
+          {/*Give feedback to user */}
           <TouchableOpacity onPress={ ()=> {  BequeathMoney(),Alert.alert("You have successfully bequeathed your bank account"),navigation.navigate("Home"),ClearInput()  }} style={styles.button2}>
 
             <Text style={{
@@ -173,6 +181,7 @@ return (
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
 
   input:{

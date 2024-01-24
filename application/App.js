@@ -9,7 +9,7 @@ import MainMenu from './screens/MainMenuScreen.js';
 import LogIn from "../application/screens/LogInScreen.js"
 import Register from '../application/screens/RegisterScreen.js';
 import Home from './screens/HomeScreen.js';
-import AddVechicle from '../application/screens/AddVechicleToWill.js';
+import AddVehicle from '../application/screens/AddVehicleToWill.js';
 import AddProperty from '../application/screens/AddPropertyToWill.js';
 import SendMoney from '../application/screens/SendMoneyScreen.js';
 import Profile from '../application/screens/ProfileScreen.js';
@@ -55,10 +55,9 @@ export default function Main(){
         <Stack.Screen name='Profile' component={Profile}/>
         <Stack.Screen name='Transactions' component={Transactions}/>
         <Stack.Screen name='Detailed' component={Detailed}/>
-        <Stack.Screen name='AddVechicle' component={AddVechicle}/>
+        <Stack.Screen name='AddVehicle' component={AddVehicle}/>
         <Stack.Screen name='AddProperty' component={AddProperty}/>
         <Stack.Screen name='BequeathMoney' component={BequeathMoney}/>
-        <Stack.Screen name='DigitalWill' component={DigitalWill}/>
         <Stack.Screen name='DigitalWillCategories' component={DigitalWillCategories}/>
       </Stack.Navigator>
       

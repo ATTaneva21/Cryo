@@ -1,13 +1,16 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+//Create function for detailed transactions to will screen
 export default function DetailedTransactions({navigation}) {
   
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
-      <View>        
+      <View> 
+
+          {/*Open profile on press */}       
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
             <Image source={require('../assets/profile.png')} />
           </TouchableOpacity>
@@ -17,14 +20,16 @@ export default function DetailedTransactions({navigation}) {
         
       <View style={{flexDirection: "row"}}>
 
+            {/*Return to transactions menu on press */}
             <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }}  style={styles.button}>
-            <Image source={require('../assets/back.png')}/>
+              <Image source={require('../assets/back.png')}/>
             </TouchableOpacity>
 
             <Text style={styles.text}>Transactions</Text>
 
         </View>
 
+        {/*Show details about a transaction */}
         <View style = {styles.box}>
           <View style={{flexDirection:"row"}}>
                   <Text style={styles.description}>Lidl</Text>
@@ -52,6 +57,7 @@ export default function DetailedTransactions({navigation}) {
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
     text: {
         fontSize: 28,

@@ -1,13 +1,16 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function DigitalWill({navigation}) {
+//Create function for digital will categories screen
+export default function DigitalWillCategories({navigation}) {
     
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
     <View>        
+
+        {/*Open profile on press */}
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
@@ -17,6 +20,7 @@ export default function DigitalWill({navigation}) {
         <Text style={styles.text}>Digital will</Text>
     </SafeAreaView>
 
+    {/*Display buttons for diffrent types of will */}
     <TouchableOpacity onPress={ ()=> { navigation.navigate("AddProperty") }} style={styles.propertyBox}>
         <Text style={{
             color: "white",
@@ -26,7 +30,7 @@ export default function DigitalWill({navigation}) {
         }}>Bequeath Property</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity onPress={ ()=> { navigation.navigate("AddVechicle") }} style={styles.vechcleBox}>
+    <TouchableOpacity onPress={ ()=> { navigation.navigate("AddVehicle") }} style={styles.vehicleBox}>
             <Text style={{
               color: "white",
               fontSize:20,
@@ -44,6 +48,7 @@ export default function DigitalWill({navigation}) {
               }}>Bequeath your bank account</Text>
     </TouchableOpacity>
 
+      {/*Return to current will*/}
     <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWill") }}  style={styles.button}>        
             <Text style={{
               color: "white",
@@ -55,6 +60,7 @@ export default function DigitalWill({navigation}) {
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
   
   text:{
@@ -79,7 +85,7 @@ const styles = StyleSheet.create({
     marginLeft: '5%'
   },
 
-  vechcleBox:{
+  vehicleBox:{
     width: '90%',
     height: 100,
     backgroundColor: "#080C12",

@@ -1,13 +1,16 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+//Create function for digital will screen
 export default function DigitalWill({navigation}) {
       
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
-    <View>        
+    <View>
+
+        {/*Open profile on press */}
         <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
           <Image source={require('../assets/profile.png')} />
         </TouchableOpacity>
@@ -19,6 +22,8 @@ export default function DigitalWill({navigation}) {
     </SafeAreaView>
 
       <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
+
+        {/*Open categories menu on press */}
         <TouchableOpacity onPress={ ()=> { navigation.navigate("DigitalWillCategories") }} >
 
             <Text style={{
@@ -33,6 +38,7 @@ export default function DigitalWill({navigation}) {
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
 
   text:{

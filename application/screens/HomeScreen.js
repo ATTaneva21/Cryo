@@ -1,13 +1,15 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+//Create function for home screen
 export default function HomeScreen({navigation}) {
 
   return (
     <LinearGradient colors={["#162d40", "#071012"]} style={{flex:1}}>
 
       <View>        
+          {/*Open profile on press */}
           <TouchableOpacity onPress={ ()=> { navigation.navigate("Profile") }}  style={styles.profile}>
             <Image source={require('../assets/profile.png')} />
           </TouchableOpacity>
@@ -16,11 +18,13 @@ export default function HomeScreen({navigation}) {
       <SafeAreaView style={styles.body}>
       
           <View style = {styles.MoneyBox}>
-            
+
+              {/*Display current balance */}
               <Text style={styles.text}>Current balance</Text>
               
               <Text style={{ color:"white", fontSize: 20, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>75.03 USD</Text>
 
+              {/*Display last transactions and their values */}
               <Text style={styles.transactionsText}>Transactions</Text>
 
               <View style={{flexDirection:"row"}}>
@@ -33,6 +37,7 @@ export default function HomeScreen({navigation}) {
                 <Text style={{ color:"white", fontSize: 17, fontWeight: "100", color: "red", marginLeft: 160}}>-20 USD</Text>
               </View>
 
+              {/*Open transactions menu*/}
               <TouchableOpacity onPress={ ()=> { navigation.navigate("Transactions") }} style={styles.button}>
 
                   <Text style={{
@@ -46,17 +51,17 @@ export default function HomeScreen({navigation}) {
           </View>
           
           <View style = {styles.DigitalWillBox}> 
-
+              {/*Display last items added will */}
               <Text style={styles.digitalWillText}>Digital Will</Text>
               
               <View style={{flexDirection:"column"}}>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Bank account</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Porsche</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Ferrari</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Cat</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>House 1</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>House 2</Text>
-                <Text style={{ color:"white", fontSize: 17, marginLeft: 15, marginTop: 10, fontWeight: "200"}}>Crypto wallet</Text>
+                <Text style={styles.will}>Bank account</Text>
+                <Text style={styles.will}>Porsche</Text>
+                <Text style={styles.will}>Ferrari</Text>
+                <Text style={styles.will}>Cat</Text>
+                <Text style={styles.will}>House 1</Text>
+                <Text style={styles.will}>House 2</Text>
+                <Text style={styles.will}>Crypto wallet</Text>
               </View>
 
           </View>
@@ -65,6 +70,7 @@ export default function HomeScreen({navigation}) {
   );
 }
 
+// Add stylization to file
 const styles = StyleSheet.create({
 
   text: {
@@ -74,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
 
-  transactionsText:{
+  transactionsText: {
     fontSize: 25,
     color: "#FFFFFF",
     marginLeft: '2%',
@@ -82,7 +88,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
 
-  digitalWillText:{
+  digitalWillText: {
     fontSize: 25,
     color: "#FFFFFF",
     marginLeft: '2%',
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
     padding: 12,
   },
 
-  DigitalWillBox:{
+  DigitalWillBox: {
     width: '87%',
     height: '50%',
     backgroundColor: "#080C12",
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
     opacity: 0.99  
   },
 
-  profile:{
+  profile: {
     width: '5%',
     height: '10%',
     marginTop: '2.5%',
@@ -121,9 +127,17 @@ const styles = StyleSheet.create({
     marginBottom: '-15%'
   },
 
-  button:{
+  button: {
     width: '21%',
     height: '6%',
     marginLeft: '80%'
   },
+
+  will: {
+    color:"white",
+    fontSize: 17,
+    marginLeft: 15,
+    marginTop: 10,
+    fontWeight: "200"
+  }
 });
