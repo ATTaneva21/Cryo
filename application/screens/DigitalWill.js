@@ -17,8 +17,23 @@ export default function DigitalWill({navigation}) {
     </View>
 
     <SafeAreaView style={styles.body}>
+
         <Text style={styles.text}>Digital will</Text>
-        <View style = {styles.box}></View>
+
+        <View style = {styles.box}>
+
+          {/*Display items added to will */}
+          <View style={{flexDirection:"column"}}>
+            <Text style={styles.will}>Bank account</Text>
+            <Text style={styles.will}>Porsche</Text>
+            <Text style={styles.will}>Ferrari</Text>
+            <Text style={styles.will}>Cat</Text>
+            <Text style={styles.will}>House 1</Text>
+            <Text style={styles.will}>House 2</Text>
+            <Text style={styles.will}>Crypto wallet</Text>
+
+          </View>
+        </View>
     </SafeAreaView>
 
       <LinearGradient colors={["#3C5882", "#0C1028"]} style={styles.button}>
@@ -41,7 +56,7 @@ export default function DigitalWill({navigation}) {
 // Add stylization to file
 const styles = StyleSheet.create({
 
-  text:{
+  text: {
       fontSize: 28,
       color: "#FFFFFF",
       marginLeft: -220
@@ -57,14 +72,12 @@ const styles = StyleSheet.create({
     height: 550,
     backgroundColor: "#080C12",
     borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
     position: 'absolute',
     marginTop:70
   },
 
   
-  profile:{
+  profile: {
     width: '10%',
     height: '10%',
     marginTop: '2.5%',
@@ -72,13 +85,23 @@ const styles = StyleSheet.create({
     marginBottom: '-15%'
   },
 
-  button:{
+  button: {
     width: '17%',
     height: '4%',
     backgroundColor:"#468189",
     borderRadius: 65,
     marginBottom: '4%',
     marginLeft: '77%'
+  },
+
+  will: {
+    color:"white",
+    fontSize: 17,
+    marginTop: 10,
+    fontWeight: "200",
+    margin: 10,
+    left: 10,
+    top: 20
   }
 
 });
